@@ -1,0 +1,266 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: 'Microservicio: Peritación'
+  description: Ejemplo de API First. Acceso de los peritos a los encargos.
+  contact:
+    name: Yo Mismo
+    url: 'http://www.example.com'
+    email: myeaddress@example.com
+  license:
+    name: Apache License Version 2.0
+host: 'localhost:8080'
+schemes: [http]
+basePath: /
+tags:
+  - name: peritos-resource
+    description: Gestion de peritos
+  - name: encargos-resource
+    description: Gestion de encargos
+paths:
+  /peritos:
+    get:
+      tags:
+        - peritos-resource
+      summary: Listado de peritos
+      operationId: getAllUsingGET_1
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Peritos'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    post:
+      tags:
+        - encargos-resource
+        - peritos-resource
+      summary: Añadir un nuevo perito
+      operationId: addUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: item
+          description: Datos del perito
+          required: true
+          schema:
+            $ref: '#/definitions/Perito'
+      responses:
+        '201':
+          description: Created
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/peritos/{id}':
+    get:
+      tags:
+        - peritos-resource
+      summary: Recuperar los datos de un perito
+      operationId: getOneUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del perito
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Perito'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    put:
+      tags:
+        - peritos-resource
+      summary: Modificar los datos de un perito existente
+      operationId: changeUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del perito
+          required: true
+          type: integer
+          format: int32
+        - in: body
+          name: item
+          description: Datos del perito
+          required: true
+          schema:
+            $ref: '#/definitions/Perito'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Perito'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    delete:
+      tags:
+        - peritos-resource
+      summary: Borrar los datos de un perito existente
+      operationId: deleteUsingDELETE
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del perito
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /encargos:
+    get:
+      tags:
+        - encargos-resource
+      summary: Listado de encargos pendientes
+      parameters:
+        - name: fecha
+          in: query
+          required: false
+          type: string
+          format: dateTime
+          description: limite de los encargos
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Encargo"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+    post:
+      tags:
+        - encargos-resource
+      summary: Crea un encargo
+      parameters:
+        - in: body
+          name: item
+          description: Datos del encargo
+          required: true
+          schema:
+            $ref: '#/definitions/Encargo'
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Encargo"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+      
+definitions:
+  Peritos:
+    description: Listado de peritos
+    type: array
+    items:
+      $ref: '#/definitions/Perito'
+  Perito:
+    title: Perito
+    description: Datos de perito
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+        description: Identificador del perito
+      nombre:
+        type: string
+        maxLength: 50
+      apellidos:
+        type: string
+        maxLength: 100
+      correo:
+        type: string
+        maxLength: 250
+      telefono:
+        type: string
+        maxLength: 15
+      modificado:
+        type: string
+        format: dateTime
+        description: Fecha de la última modificación
+    required:
+      - id
+      - nombre
+      - apellidos
+  Encargo:
+    title: Encargo
+    type: object
+    properties:
+      encargoId:
+        type: integer
+        format: int32
+      peritoId:
+        type: integer
+        format: int32
+        description: Identificador del perito
+      peticion:
+        type: string
+        format: dateTime
+        description: Fecha de la petición
+      ref:
+        type: string
+      direccion:
+        type: string
+    required:
+      - encargoId
+      - peritoId
+      - peticion
+      - ref
+      - direccion
