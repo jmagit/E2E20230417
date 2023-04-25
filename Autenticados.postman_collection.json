@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "ebfbf63d-f93f-45f9-ba14-28ebdf7590a6",
+		"name": "Autenticados",
+		"description": "Ejemplos de scripts previos a la solicitud para la autenticación y control de flujo.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8273928",
+		"_collection_link": "https://www.postman.com/red-flare-4265/workspace/ejemplos/collection/8273928-ebfbf63d-f93f-45f9-ba14-28ebdf7590a6?action=share&creator=8273928&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Smoke",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"isAuthenticated is true\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isAuthenticated).is.true;\r",
+							"});\r",
+							"\r",
+							"if(pm.response.code >= 400 || !pm.response.json().isAuthenticated)\r",
+							"    postman.setNextRequest(null);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/auth",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "Prueba de humo que aborta la ejecución de la colección si no se ha autenticado correctamente."
+			},
+			"response": []
+		},
+		{
+			"name": "Blog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/blog",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"blog"
+					]
+				},
+				"description": "Para acceder al Blog el usuario debe pertenecer a:\n\n- Empleados\n- Administradores."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Crear variables",
+					"// pm.collectionVariables.set(\"token\")",
+					"// pm.collectionVariables.set(\"url_base\", \"http://localhost:8181/api\");",
+					"// pm.collectionVariables.set(\"url_login\", \"http://localhost:8181/api/login\");",
+					"// pm.collectionVariables.set(\"usr\", \"adm@kk.kk\");",
+					"// pm.collectionVariables.set(\"pwd\", \"P@$$w0rd\");",
+					"",
+					"pm.collectionVariables.unset(\"token\")",
+					"const postRequest = {",
+					"  url: pm.collectionVariables.get(\"url_login\"),",
+					"  method: 'POST',",
+					"  header: {'Content-Type': 'application/json'},",
+					"  body: { mode: 'raw', raw: `{ \"username\": \"${pm.variables.get(\"usr\")}\", \"password\": \"${pm.variables.get(\"pwd\")}\" }` }",
+					"};",
+					"pm.sendRequest(postRequest, (error, response) => {",
+					"  pm.collectionVariables.set(\"token\", response.json().token);",
+					"});",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_base",
+			"value": "http://localhost:8181/api"
+		},
+		{
+			"key": "url_login",
+			"value": "http://localhost:8181/api/login"
+		},
+		{
+			"key": "usr",
+			"value": ""
+		},
+		{
+			"key": "pwd",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
