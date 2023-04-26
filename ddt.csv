@@ -1,0 +1,4 @@
+accept,content-type,status
+application/json,application/json,200
+application/xml,application/xml;charset=UTF-8,200
+text/plain,application/json,406
