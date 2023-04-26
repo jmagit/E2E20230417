@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "e7cf2090-3ddf-4662-818e-53a891d7d198",
+		"name": "ddt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8273928",
+		"_collection_link": "https://www.postman.com/red-flare-4265/workspace/ejemplos/collection/8273928-e7cf2090-3ddf-4662-818e-53a891d7d198?action=share&creator=8273928&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Negociar contenido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(`Content-Type is ${pm.variables.get(\"content-type\")}`, function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", pm.variables.get(\"content-type\"));\r",
+							"});\r",
+							"pm.test(\"Status code is \" + pm.variables.get(\"status\"), function () {\r",
+							"    pm.response.to.have.status(+pm.variables.get(\"status\"));\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{accept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8181/api/contactos/47",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"contactos",
+						"47"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accept",
+			"value": "application/json",
+			"type": "string"
+		},
+		{
+			"key": "content-type",
+			"value": "application/json; charset=utf-8",
+			"type": "string"
+		},
+		{
+			"key": "status",
+			"value": "200",
+			"type": "string"
+		}
+	]
+}

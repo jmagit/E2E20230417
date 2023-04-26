@@ -1,0 +1,1357 @@
+{
+	"info": {
+		"_postman_id": "6471d693-db55-4b83-a8c4-40ddc122dab1",
+		"name": "Iniciales",
+		"description": "Ejemplos iniciales del curso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8273928",
+		"_collection_link": "https://www.postman.com/red-flare-4265/workspace/ejemplos/collection/8273928-6471d693-db55-4b83-a8c4-40ddc122dab1?action=share&creator=8273928&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "GET ALL",
+					"item": [
+						{
+							"name": "OK",
+							"item": [
+								{
+									"name": "Lista todas las personas paginadas",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/api/personas?_page=0",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											],
+											"query": [
+												{
+													"key": "_page",
+													"value": "0",
+													"description": "Número de página empezando en 0 (primera página)."
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Lista todas las personas paginadas",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url_base}}/api/personas?_page=1",
+													"host": [
+														"{{url_base}}"
+													],
+													"path": [
+														"api",
+														"personas"
+													],
+													"query": [
+														{
+															"key": "_page",
+															"value": "1",
+															"description": "Número de página empezando en 0 (primera página)."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Origin, Content-Type, Accept, Authorization, X-Requested-With, X-XSRF-TOKEN"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+												},
+												{
+													"key": "Access-Control-Allow-Credentials",
+													"value": "true"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2710"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"a96-LuCLfok0nnvYwsG9TN0vlobl0m4\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 24 Apr 2023 14:26:55 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"content\": [\n        {\n            \"id\": 21,\n            \"nombre\": \"Malachi\",\n            \"apellidos\": \"Barber\",\n            \"correo\": \"lobortis.tellus.justo@lectusasollicitudin.co.uk\",\n            \"telefono\": [\n                \"946 271 069\"\n            ],\n            \"edad\": 51\n        },\n        {\n            \"id\": 22,\n            \"nombre\": \"Amaya\",\n            \"apellidos\": \"Owens\",\n            \"correo\": \"ornare.Fusce@interdum.ca\",\n            \"telefono\": [\n                \"916 710 443\"\n            ],\n            \"edad\": 67\n        },\n        {\n            \"id\": 23,\n            \"nombre\": \"Aaron\",\n            \"apellidos\": \"Thompson\",\n            \"correo\": \"faucibus.orci.luctus@tellus.ca\",\n            \"telefono\": [\n                \"928 801 096\"\n            ],\n            \"edad\": 40\n        },\n        {\n            \"id\": 24,\n            \"nombre\": \"Gisela\",\n            \"apellidos\": \"Bryant\",\n            \"correo\": \"montes.nascetur.ridiculus@habitantmorbi.net\",\n            \"telefono\": [\n                \"953 024 768\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 25,\n            \"nombre\": \"Cathleen\",\n            \"apellidos\": \"Anthony\",\n            \"correo\": \"egestas.Duis.ac@enim.org\",\n            \"telefono\": [\n                \"933 066 469\"\n            ],\n            \"edad\": 67\n        },\n        {\n            \"id\": 26,\n            \"nombre\": \"Cheyenne\",\n            \"apellidos\": \"Logan\",\n            \"correo\": \"elementum.at@sed.co.uk\",\n            \"telefono\": [\n                \"913 653 745\"\n            ],\n            \"edad\": 51\n        },\n        {\n            \"id\": 27,\n            \"nombre\": \"Jerry\",\n            \"apellidos\": \"House\",\n            \"correo\": \"Curabitur.consequat.lectus@utquam.co.uk\",\n            \"telefono\": [\n                \"958 299 990\"\n            ],\n            \"edad\": 45\n        },\n        {\n            \"id\": 28,\n            \"nombre\": \"Tamekah\",\n            \"apellidos\": \"Dudley\",\n            \"correo\": \"pharetra.felis.eget@lobortisauguescelerisque.ca\",\n            \"telefono\": [\n                \"949 619 671\"\n            ],\n            \"edad\": 18\n        },\n        {\n            \"id\": 29,\n            \"nombre\": \"Travis\",\n            \"apellidos\": \"Gonzales\",\n            \"correo\": \"mi.ac.mattis@gravidasagittis.ca\",\n            \"telefono\": [\n                \"976 316 630\"\n            ],\n            \"edad\": 38\n        },\n        {\n            \"id\": 30,\n            \"nombre\": \"Kibo\",\n            \"apellidos\": \"Boone\",\n            \"correo\": \"sed.libero.Proin@metusfacilisis.co.uk\",\n            \"telefono\": [\n                \"921 324 087\"\n            ],\n            \"edad\": 63\n        },\n        {\n            \"id\": 31,\n            \"nombre\": \"Uta\",\n            \"apellidos\": \"Foreman\",\n            \"correo\": \"Nulla@velitQuisque.net\",\n            \"telefono\": [\n                \"942 568 534\"\n            ],\n            \"edad\": 17\n        },\n        {\n            \"id\": 32,\n            \"nombre\": \"Miranda\",\n            \"apellidos\": \"Dillon\",\n            \"correo\": \"elementum.lorem.ut@utmolestiein.edu\",\n            \"telefono\": [\n                \"933 160 570\"\n            ],\n            \"edad\": 59\n        },\n        {\n            \"id\": 33,\n            \"nombre\": \"Freya\",\n            \"apellidos\": \"Moss\",\n            \"correo\": \"non.ante@nibhdolornonummy.net\",\n            \"telefono\": [\n                \"956 329 763\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 34,\n            \"nombre\": \"Cassidy\",\n            \"apellidos\": \"Hebert\",\n            \"correo\": \"dis@natoquepenatibuset.com\",\n            \"telefono\": [\n                \"997 321 532\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 35,\n            \"nombre\": \"Bethany\",\n            \"apellidos\": \"Wolf\",\n            \"correo\": \"eget@Sedeunibh.com\",\n            \"telefono\": [\n                \"934 539 179\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 36,\n            \"nombre\": \"Nichole\",\n            \"apellidos\": \"Roach\",\n            \"correo\": \"et@Integervitae.edu\",\n            \"telefono\": [\n                \"997 455 838\"\n            ],\n            \"edad\": 49\n        },\n        {\n            \"id\": 37,\n            \"nombre\": \"Tamara\",\n            \"apellidos\": \"Wade\",\n            \"correo\": \"adipiscing@Suspendissetristiqueneque.edu\",\n            \"telefono\": [\n                \"949 784 182\"\n            ],\n            \"edad\": 31\n        },\n        {\n            \"id\": 38,\n            \"nombre\": \"Brynne\",\n            \"apellidos\": \"Rivers\",\n            \"correo\": \"Pellentesque.ut.ipsum@necanteMaecenas.co.uk\",\n            \"telefono\": [\n                \"990 298 260\"\n            ],\n            \"edad\": 38\n        },\n        {\n            \"id\": 39,\n            \"nombre\": \"Quinn\",\n            \"apellidos\": \"Langley\",\n            \"correo\": \"ultrices@diam.edu\",\n            \"telefono\": [\n                \"961 603 714\"\n            ],\n            \"edad\": 48\n        },\n        {\n            \"id\": 40,\n            \"nombre\": \"Gavin\",\n            \"apellidos\": \"Patterson\",\n            \"correo\": \"ultricies@Donectempus.co.uk\",\n            \"telefono\": [\n                \"924 239 597\"\n            ],\n            \"edad\": 62\n        }\n    ],\n    \"totalElements\": 100,\n    \"totalPages\": 5,\n    \"number\": 2,\n    \"size\": 20,\n    \"empty\": false,\n    \"first\": false,\n    \"last\": false,\n    \"numberOfElements\": 20\n}"
+										},
+										{
+											"name": "Lista todas las personas paginadas",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url_base}}/api/personas?_page=0",
+													"host": [
+														"{{url_base}}"
+													],
+													"path": [
+														"api",
+														"personas"
+													],
+													"query": [
+														{
+															"key": "_page",
+															"value": "0",
+															"description": "Número de página empezando en 0 (primera página)."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Origin, Content-Type, Accept, Authorization, X-Requested-With, X-XSRF-TOKEN"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+												},
+												{
+													"key": "Access-Control-Allow-Credentials",
+													"value": "true"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2395"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"95b-miGlj3VLCH/iEAusfM3jKCZ/a8Y\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 24 Apr 2023 14:27:25 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"content\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Camelo\",\n            \"apellidos\": \"Coton\",\n            \"edad\": 37,\n            \"telefono\": [\n                \"123 424 435\",\n                \"555 000 111\"\n            ]\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"Pepito\",\n            \"apellidos\": \"Grillo\",\n            \"edad\": 67\n        },\n        {\n            \"id\": 3,\n            \"nombre\": \"Pierre\",\n            \"apellidos\": \"Nodoiuna\",\n            \"edad\": 55\n        },\n        {\n            \"id\": 4,\n            \"nombre\": \"Capitan\",\n            \"apellidos\": \"Tan\",\n            \"edad\": 18\n        },\n        {\n            \"id\": 5,\n            \"nombre\": \"Alice\",\n            \"apellidos\": \"Knight\",\n            \"correo\": \"pellentesque@Aliquam.ca\",\n            \"telefono\": [\n                \"989 622 809\"\n            ],\n            \"edad\": 18\n        },\n        {\n            \"id\": 6,\n            \"nombre\": \"Maite\",\n            \"apellidos\": \"Golden\",\n            \"correo\": \"feugiat.non@Quisque.co.uk\",\n            \"telefono\": [\n                \"982 600 405\"\n            ],\n            \"edad\": 54\n        },\n        {\n            \"id\": 7,\n            \"nombre\": \"Serina\",\n            \"apellidos\": \"Rasmussen\",\n            \"correo\": \"luctus@mi.edu\",\n            \"telefono\": [\n                \"948 679 951\"\n            ],\n            \"edad\": 44\n        },\n        {\n            \"id\": 8,\n            \"nombre\": \"Maisie\",\n            \"apellidos\": \"Townsend\",\n            \"correo\": \"sed.consequat@Loremipsumdolor.org\",\n            \"telefono\": [\n                \"955 182 130\"\n            ],\n            \"edad\": 54\n        },\n        {\n            \"id\": 9,\n            \"nombre\": \"Adria\",\n            \"apellidos\": \"Gentry\",\n            \"correo\": \"in.consequat@gravidanonsollicitudin.net\",\n            \"telefono\": [\n                \"989 656 812\"\n            ],\n            \"edad\": 26\n        },\n        {\n            \"id\": 10,\n            \"nombre\": \"Ira\",\n            \"apellidos\": \"Wilcox\",\n            \"correo\": \"velit.Sed@Proinnon.org\",\n            \"telefono\": [\n                \"957 056 412\"\n            ],\n            \"edad\": 31\n        },\n        {\n            \"id\": 11,\n            \"nombre\": \"Wilma\",\n            \"apellidos\": \"Conner\",\n            \"correo\": \"dolor.sit@Duis.com\",\n            \"telefono\": [\n                \"959 072 497\"\n            ],\n            \"edad\": 27\n        },\n        {\n            \"id\": 12,\n            \"nombre\": \"Cassady\",\n            \"apellidos\": \"Ashley\",\n            \"correo\": \"ipsum.dolor@enim.edu\",\n            \"telefono\": [\n                \"991 562 561\"\n            ],\n            \"edad\": 30\n        },\n        {\n            \"id\": 13,\n            \"nombre\": \"Isadora\",\n            \"apellidos\": \"Mendoza\",\n            \"correo\": \"diam.Proin.dolor@accumsannequeet.edu\",\n            \"telefono\": [\n                \"927 521 517\"\n            ],\n            \"edad\": 24\n        },\n        {\n            \"id\": 14,\n            \"nombre\": \"Tamara\",\n            \"apellidos\": \"Davis\",\n            \"correo\": \"dui@pedeSuspendissedui.co.uk\",\n            \"telefono\": [\n                \"966 895 055\"\n            ],\n            \"edad\": 63\n        },\n        {\n            \"id\": 15,\n            \"nombre\": \"Eleanor\",\n            \"apellidos\": \"Wilder\",\n            \"correo\": \"arcu@viverra.com\",\n            \"telefono\": [\n                \"953 023 261\"\n            ],\n            \"edad\": 27\n        },\n        {\n            \"id\": 16,\n            \"nombre\": \"Nerea\",\n            \"apellidos\": \"Valencia\",\n            \"correo\": \"urna.Ut@convallisconvallisdolor.com\",\n            \"telefono\": [\n                \"955 039 451\"\n            ],\n            \"edad\": 59\n        },\n        {\n            \"id\": 17,\n            \"nombre\": \"Jared\",\n            \"apellidos\": \"Reid\",\n            \"correo\": \"vitae.posuere.at@cursusluctusipsum.co.uk\",\n            \"telefono\": [\n                \"915 397 720\"\n            ],\n            \"edad\": 29\n        },\n        {\n            \"id\": 18,\n            \"nombre\": \"Brianna\",\n            \"apellidos\": \"Horn\",\n            \"correo\": \"commodo.ipsum@ligulaeuenim.ca\",\n            \"telefono\": [\n                \"906 222 203\"\n            ],\n            \"edad\": 66\n        },\n        {\n            \"id\": 19,\n            \"nombre\": \"Amethyst\",\n            \"apellidos\": \"Luna\",\n            \"correo\": \"purus.gravida@idrisus.com\",\n            \"telefono\": [\n                \"913 415 191\"\n            ],\n            \"edad\": 19\n        },\n        {\n            \"id\": 20,\n            \"nombre\": \"Mannix\",\n            \"apellidos\": \"Parker\",\n            \"correo\": \"in@imperdieteratnonummy.co.uk\",\n            \"telefono\": [\n                \"967 850 707\"\n            ],\n            \"edad\": 23\n        }\n    ],\n    \"totalElements\": 100,\n    \"totalPages\": 5,\n    \"number\": 1,\n    \"size\": 20,\n    \"empty\": false,\n    \"first\": true,\n    \"last\": false,\n    \"numberOfElements\": 20\n}"
+										}
+									]
+								},
+								{
+									"name": "Lista todas las personas paginadas con filas",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/api/personas?_page=0&_rows=10",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											],
+											"query": [
+												{
+													"key": "_page",
+													"value": "0",
+													"description": "Número de página empezando en 0 (primera página)."
+												},
+												{
+													"key": "_rows",
+													"value": "10",
+													"description": "Número de filas por página, por defecto 20 si se omite pero aparece el parámetro _page."
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Primera pagina de 10 filas",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url_base}}/api/personas?_page=0&_rows=10",
+													"host": [
+														"{{url_base}}"
+													],
+													"path": [
+														"api",
+														"personas"
+													],
+													"query": [
+														{
+															"key": "_page",
+															"value": "0",
+															"description": "Número de página empezando en 0 (primera página)."
+														},
+														{
+															"key": "_rows",
+															"value": "10",
+															"description": "Número de filas por página, por defecto 20 si se omite pero aparece el parámetro _page."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Origin, Content-Type, Accept, Authorization, X-Requested-With, X-XSRF-TOKEN"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+												},
+												{
+													"key": "Access-Control-Allow-Credentials",
+													"value": "true"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "1141"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"475-dJlM5DslAxsQW8uQm/XTKZwxu0k\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 24 Apr 2023 14:29:20 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"content\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Camelo\",\n            \"apellidos\": \"Coton\",\n            \"edad\": 37,\n            \"telefono\": [\n                \"123 424 435\",\n                \"555 000 111\"\n            ]\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"Pepito\",\n            \"apellidos\": \"Grillo\",\n            \"edad\": 67\n        },\n        {\n            \"id\": 3,\n            \"nombre\": \"Pierre\",\n            \"apellidos\": \"Nodoiuna\",\n            \"edad\": 55\n        },\n        {\n            \"id\": 4,\n            \"nombre\": \"Capitan\",\n            \"apellidos\": \"Tan\",\n            \"edad\": 18\n        },\n        {\n            \"id\": 5,\n            \"nombre\": \"Alice\",\n            \"apellidos\": \"Knight\",\n            \"correo\": \"pellentesque@Aliquam.ca\",\n            \"telefono\": [\n                \"989 622 809\"\n            ],\n            \"edad\": 18\n        },\n        {\n            \"id\": 6,\n            \"nombre\": \"Maite\",\n            \"apellidos\": \"Golden\",\n            \"correo\": \"feugiat.non@Quisque.co.uk\",\n            \"telefono\": [\n                \"982 600 405\"\n            ],\n            \"edad\": 54\n        },\n        {\n            \"id\": 7,\n            \"nombre\": \"Serina\",\n            \"apellidos\": \"Rasmussen\",\n            \"correo\": \"luctus@mi.edu\",\n            \"telefono\": [\n                \"948 679 951\"\n            ],\n            \"edad\": 44\n        },\n        {\n            \"id\": 8,\n            \"nombre\": \"Maisie\",\n            \"apellidos\": \"Townsend\",\n            \"correo\": \"sed.consequat@Loremipsumdolor.org\",\n            \"telefono\": [\n                \"955 182 130\"\n            ],\n            \"edad\": 54\n        },\n        {\n            \"id\": 9,\n            \"nombre\": \"Adria\",\n            \"apellidos\": \"Gentry\",\n            \"correo\": \"in.consequat@gravidanonsollicitudin.net\",\n            \"telefono\": [\n                \"989 656 812\"\n            ],\n            \"edad\": 26\n        },\n        {\n            \"id\": 10,\n            \"nombre\": \"Ira\",\n            \"apellidos\": \"Wilcox\",\n            \"correo\": \"velit.Sed@Proinnon.org\",\n            \"telefono\": [\n                \"957 056 412\"\n            ],\n            \"edad\": 31\n        }\n    ],\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"number\": 1,\n    \"size\": 10,\n    \"empty\": false,\n    \"first\": true,\n    \"last\": false,\n    \"numberOfElements\": 10\n}"
+										},
+										{
+											"name": "Segunda página de 20 filas",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url_base}}/api/personas?_page=1&_rows=20",
+													"host": [
+														"{{url_base}}"
+													],
+													"path": [
+														"api",
+														"personas"
+													],
+													"query": [
+														{
+															"key": "_page",
+															"value": "1",
+															"description": "Número de página empezando en 0 (primera página)."
+														},
+														{
+															"key": "_rows",
+															"value": "20",
+															"description": "Número de filas por página, por defecto 20 si se omite pero aparece el parámetro _page."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Origin, Content-Type, Accept, Authorization, X-Requested-With, X-XSRF-TOKEN"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+												},
+												{
+													"key": "Access-Control-Allow-Credentials",
+													"value": "true"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2710"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"a96-LuCLfok0nnvYwsG9TN0vlobl0m4\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 24 Apr 2023 14:31:34 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"content\": [\n        {\n            \"id\": 21,\n            \"nombre\": \"Malachi\",\n            \"apellidos\": \"Barber\",\n            \"correo\": \"lobortis.tellus.justo@lectusasollicitudin.co.uk\",\n            \"telefono\": [\n                \"946 271 069\"\n            ],\n            \"edad\": 51\n        },\n        {\n            \"id\": 22,\n            \"nombre\": \"Amaya\",\n            \"apellidos\": \"Owens\",\n            \"correo\": \"ornare.Fusce@interdum.ca\",\n            \"telefono\": [\n                \"916 710 443\"\n            ],\n            \"edad\": 67\n        },\n        {\n            \"id\": 23,\n            \"nombre\": \"Aaron\",\n            \"apellidos\": \"Thompson\",\n            \"correo\": \"faucibus.orci.luctus@tellus.ca\",\n            \"telefono\": [\n                \"928 801 096\"\n            ],\n            \"edad\": 40\n        },\n        {\n            \"id\": 24,\n            \"nombre\": \"Gisela\",\n            \"apellidos\": \"Bryant\",\n            \"correo\": \"montes.nascetur.ridiculus@habitantmorbi.net\",\n            \"telefono\": [\n                \"953 024 768\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 25,\n            \"nombre\": \"Cathleen\",\n            \"apellidos\": \"Anthony\",\n            \"correo\": \"egestas.Duis.ac@enim.org\",\n            \"telefono\": [\n                \"933 066 469\"\n            ],\n            \"edad\": 67\n        },\n        {\n            \"id\": 26,\n            \"nombre\": \"Cheyenne\",\n            \"apellidos\": \"Logan\",\n            \"correo\": \"elementum.at@sed.co.uk\",\n            \"telefono\": [\n                \"913 653 745\"\n            ],\n            \"edad\": 51\n        },\n        {\n            \"id\": 27,\n            \"nombre\": \"Jerry\",\n            \"apellidos\": \"House\",\n            \"correo\": \"Curabitur.consequat.lectus@utquam.co.uk\",\n            \"telefono\": [\n                \"958 299 990\"\n            ],\n            \"edad\": 45\n        },\n        {\n            \"id\": 28,\n            \"nombre\": \"Tamekah\",\n            \"apellidos\": \"Dudley\",\n            \"correo\": \"pharetra.felis.eget@lobortisauguescelerisque.ca\",\n            \"telefono\": [\n                \"949 619 671\"\n            ],\n            \"edad\": 18\n        },\n        {\n            \"id\": 29,\n            \"nombre\": \"Travis\",\n            \"apellidos\": \"Gonzales\",\n            \"correo\": \"mi.ac.mattis@gravidasagittis.ca\",\n            \"telefono\": [\n                \"976 316 630\"\n            ],\n            \"edad\": 38\n        },\n        {\n            \"id\": 30,\n            \"nombre\": \"Kibo\",\n            \"apellidos\": \"Boone\",\n            \"correo\": \"sed.libero.Proin@metusfacilisis.co.uk\",\n            \"telefono\": [\n                \"921 324 087\"\n            ],\n            \"edad\": 63\n        },\n        {\n            \"id\": 31,\n            \"nombre\": \"Uta\",\n            \"apellidos\": \"Foreman\",\n            \"correo\": \"Nulla@velitQuisque.net\",\n            \"telefono\": [\n                \"942 568 534\"\n            ],\n            \"edad\": 17\n        },\n        {\n            \"id\": 32,\n            \"nombre\": \"Miranda\",\n            \"apellidos\": \"Dillon\",\n            \"correo\": \"elementum.lorem.ut@utmolestiein.edu\",\n            \"telefono\": [\n                \"933 160 570\"\n            ],\n            \"edad\": 59\n        },\n        {\n            \"id\": 33,\n            \"nombre\": \"Freya\",\n            \"apellidos\": \"Moss\",\n            \"correo\": \"non.ante@nibhdolornonummy.net\",\n            \"telefono\": [\n                \"956 329 763\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 34,\n            \"nombre\": \"Cassidy\",\n            \"apellidos\": \"Hebert\",\n            \"correo\": \"dis@natoquepenatibuset.com\",\n            \"telefono\": [\n                \"997 321 532\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 35,\n            \"nombre\": \"Bethany\",\n            \"apellidos\": \"Wolf\",\n            \"correo\": \"eget@Sedeunibh.com\",\n            \"telefono\": [\n                \"934 539 179\"\n            ],\n            \"edad\": 39\n        },\n        {\n            \"id\": 36,\n            \"nombre\": \"Nichole\",\n            \"apellidos\": \"Roach\",\n            \"correo\": \"et@Integervitae.edu\",\n            \"telefono\": [\n                \"997 455 838\"\n            ],\n            \"edad\": 49\n        },\n        {\n            \"id\": 37,\n            \"nombre\": \"Tamara\",\n            \"apellidos\": \"Wade\",\n            \"correo\": \"adipiscing@Suspendissetristiqueneque.edu\",\n            \"telefono\": [\n                \"949 784 182\"\n            ],\n            \"edad\": 31\n        },\n        {\n            \"id\": 38,\n            \"nombre\": \"Brynne\",\n            \"apellidos\": \"Rivers\",\n            \"correo\": \"Pellentesque.ut.ipsum@necanteMaecenas.co.uk\",\n            \"telefono\": [\n                \"990 298 260\"\n            ],\n            \"edad\": 38\n        },\n        {\n            \"id\": 39,\n            \"nombre\": \"Quinn\",\n            \"apellidos\": \"Langley\",\n            \"correo\": \"ultrices@diam.edu\",\n            \"telefono\": [\n                \"961 603 714\"\n            ],\n            \"edad\": 48\n        },\n        {\n            \"id\": 40,\n            \"nombre\": \"Gavin\",\n            \"apellidos\": \"Patterson\",\n            \"correo\": \"ultricies@Donectempus.co.uk\",\n            \"telefono\": [\n                \"924 239 597\"\n            ],\n            \"edad\": 62\n        }\n    ],\n    \"totalElements\": 100,\n    \"totalPages\": 5,\n    \"number\": 2,\n    \"size\": 20,\n    \"empty\": false,\n    \"first\": false,\n    \"last\": false,\n    \"numberOfElements\": 20\n}"
+										}
+									]
+								},
+								{
+									"name": "Lista todas las personas paginadas solo filas",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/api/personas?_rows=30",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											],
+											"query": [
+												{
+													"key": "_rows",
+													"value": "30",
+													"description": "Número de filas por página, por defecto 20 si se omite pero aparece el parámetro _page."
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Lista todas las personas",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var schema = {\r",
+													"    \"definitions\": {},\r",
+													"    \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+													"    \"$id\": \"https://example.com/object1682434113.json\",\r",
+													"    \"title\": \"Root\",\r",
+													"    \"type\": \"array\",\r",
+													"    \"default\": [],\r",
+													"    \"items\": {\r",
+													"        \"type\": \"object\",\r",
+													"        \"required\": [\r",
+													"            \"id\",\r",
+													"            \"nombre\"\r",
+													"        ],\r",
+													"        \"properties\": {\r",
+													"            \"id\": {\r",
+													"                \"$id\": \"#root/id\",\r",
+													"                \"title\": \"Id\",\r",
+													"                \"type\": \"integer\",\r",
+													"                \"default\": 0\r",
+													"            },\r",
+													"            \"nombre\": {\r",
+													"                \"$id\": \"#root/nombre\",\r",
+													"                \"title\": \"Nombre\",\r",
+													"                \"type\": \"string\",\r",
+													"                \"default\": \"\",\r",
+													"                \"pattern\": \"^.*$\"\r",
+													"            },\r",
+													"            \"apellidos\": {\r",
+													"                \"$id\": \"#root/apellidos\",\r",
+													"                \"title\": \"Apellidos\",\r",
+													"                \"type\": \"string\",\r",
+													"                \"default\": \"\",\r",
+													"                \"pattern\": \"^.*$\"\r",
+													"            },\r",
+													"            \"correo\": {\r",
+													"                \"$id\": \"#root/correo\",\r",
+													"                \"title\": \"Correo\",\r",
+													"                \"type\": \"string\",\r",
+													"                \"default\": \"\",\r",
+													"                \"pattern\": \"^[^@]+@[^@]+\\.[a-zA-Z]{2,}$\"\r",
+													"            },\r",
+													"            \"telefono\": {\r",
+													"                \"$id\": \"#root/telefono\",\r",
+													"                \"title\": \"Telefono\",\r",
+													"                \"type\": \"array\",\r",
+													"                \"default\": [],\r",
+													"                \"items\": {\r",
+													"                    \"$id\": \"#root/telefono/items\",\r",
+													"                    \"title\": \"Items\",\r",
+													"                    \"type\": \"string\",\r",
+													"                    \"default\": \"\",\r",
+													"                    \"pattern\": \"^.*$\"\r",
+													"                }\r",
+													"            },\r",
+													"            \"edad\": {\r",
+													"                \"$id\": \"#root/edad\",\r",
+													"                \"title\": \"Edad\",\r",
+													"                \"type\": \"integer\",\r",
+													"                \"minimum\": 16,\r",
+													"                \"maximum\": 67,\r",
+													"                \"default\": 0\r",
+													"            }\r",
+													"        }\r",
+													"    }\r",
+													"};\r",
+													"\r",
+													"pm.test('Schema is valid', function () {\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var template = `\r",
+													"    <table bgcolor=\"#FFFFFF\">\r",
+													"        <tr><th>Id</th><th>Nombre</th><th>Apellidos</th></tr>\r",
+													"        {{#each response}}\r",
+													"            <tr><td>{{id}}</td><td>{{nombre}}</td><td>{{apellidos}}</td></tr>\r",
+													"        {{/each}}\r",
+													"    </table>\r",
+													"`;\r",
+													"pm.visualizer.set(template, { response: pm.response.json() });\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Lista todas las personas",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url_base}}/api/personas",
+													"host": [
+														"{{url_base}}"
+													],
+													"path": [
+														"api",
+														"personas"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Origin, Content-Type, Accept, Authorization, X-Requested-With, X-XSRF-TOKEN"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+												},
+												{
+													"key": "Access-Control-Allow-Credentials",
+													"value": "true"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "12406"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3076-uoFTR3cay3GrjGCbinyd9DAyON0\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 24 Apr 2023 14:24:40 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Camelo\",\n        \"apellidos\": \"Coton\",\n        \"edad\": 37,\n        \"telefono\": [\n            \"123 424 435\",\n            \"555 000 111\"\n        ]\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Pepito\",\n        \"apellidos\": \"Grillo\",\n        \"edad\": 67\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Pierre\",\n        \"apellidos\": \"Nodoiuna\",\n        \"edad\": 55\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Capitan\",\n        \"apellidos\": \"Tan\",\n        \"edad\": 18\n    },\n    {\n        \"id\": 5,\n        \"nombre\": \"Alice\",\n        \"apellidos\": \"Knight\",\n        \"correo\": \"pellentesque@Aliquam.ca\",\n        \"telefono\": [\n            \"989 622 809\"\n        ],\n        \"edad\": 18\n    },\n    {\n        \"id\": 6,\n        \"nombre\": \"Maite\",\n        \"apellidos\": \"Golden\",\n        \"correo\": \"feugiat.non@Quisque.co.uk\",\n        \"telefono\": [\n            \"982 600 405\"\n        ],\n        \"edad\": 54\n    },\n    {\n        \"id\": 7,\n        \"nombre\": \"Serina\",\n        \"apellidos\": \"Rasmussen\",\n        \"correo\": \"luctus@mi.edu\",\n        \"telefono\": [\n            \"948 679 951\"\n        ],\n        \"edad\": 44\n    },\n    {\n        \"id\": 8,\n        \"nombre\": \"Maisie\",\n        \"apellidos\": \"Townsend\",\n        \"correo\": \"sed.consequat@Loremipsumdolor.org\",\n        \"telefono\": [\n            \"955 182 130\"\n        ],\n        \"edad\": 54\n    },\n    {\n        \"id\": 9,\n        \"nombre\": \"Adria\",\n        \"apellidos\": \"Gentry\",\n        \"correo\": \"in.consequat@gravidanonsollicitudin.net\",\n        \"telefono\": [\n            \"989 656 812\"\n        ],\n        \"edad\": 26\n    },\n    {\n        \"id\": 10,\n        \"nombre\": \"Ira\",\n        \"apellidos\": \"Wilcox\",\n        \"correo\": \"velit.Sed@Proinnon.org\",\n        \"telefono\": [\n            \"957 056 412\"\n        ],\n        \"edad\": 31\n    },\n    {\n        \"id\": 11,\n        \"nombre\": \"Wilma\",\n        \"apellidos\": \"Conner\",\n        \"correo\": \"dolor.sit@Duis.com\",\n        \"telefono\": [\n            \"959 072 497\"\n        ],\n        \"edad\": 27\n    },\n    {\n        \"id\": 12,\n        \"nombre\": \"Cassady\",\n        \"apellidos\": \"Ashley\",\n        \"correo\": \"ipsum.dolor@enim.edu\",\n        \"telefono\": [\n            \"991 562 561\"\n        ],\n        \"edad\": 30\n    },\n    {\n        \"id\": 13,\n        \"nombre\": \"Isadora\",\n        \"apellidos\": \"Mendoza\",\n        \"correo\": \"diam.Proin.dolor@accumsannequeet.edu\",\n        \"telefono\": [\n            \"927 521 517\"\n        ],\n        \"edad\": 24\n    },\n    {\n        \"id\": 14,\n        \"nombre\": \"Tamara\",\n        \"apellidos\": \"Davis\",\n        \"correo\": \"dui@pedeSuspendissedui.co.uk\",\n        \"telefono\": [\n            \"966 895 055\"\n        ],\n        \"edad\": 63\n    },\n    {\n        \"id\": 15,\n        \"nombre\": \"Eleanor\",\n        \"apellidos\": \"Wilder\",\n        \"correo\": \"arcu@viverra.com\",\n        \"telefono\": [\n            \"953 023 261\"\n        ],\n        \"edad\": 27\n    },\n    {\n        \"id\": 16,\n        \"nombre\": \"Nerea\",\n        \"apellidos\": \"Valencia\",\n        \"correo\": \"urna.Ut@convallisconvallisdolor.com\",\n        \"telefono\": [\n            \"955 039 451\"\n        ],\n        \"edad\": 59\n    },\n    {\n        \"id\": 17,\n        \"nombre\": \"Jared\",\n        \"apellidos\": \"Reid\",\n        \"correo\": \"vitae.posuere.at@cursusluctusipsum.co.uk\",\n        \"telefono\": [\n            \"915 397 720\"\n        ],\n        \"edad\": 29\n    },\n    {\n        \"id\": 18,\n        \"nombre\": \"Brianna\",\n        \"apellidos\": \"Horn\",\n        \"correo\": \"commodo.ipsum@ligulaeuenim.ca\",\n        \"telefono\": [\n            \"906 222 203\"\n        ],\n        \"edad\": 66\n    },\n    {\n        \"id\": 19,\n        \"nombre\": \"Amethyst\",\n        \"apellidos\": \"Luna\",\n        \"correo\": \"purus.gravida@idrisus.com\",\n        \"telefono\": [\n            \"913 415 191\"\n        ],\n        \"edad\": 19\n    },\n    {\n        \"id\": 20,\n        \"nombre\": \"Mannix\",\n        \"apellidos\": \"Parker\",\n        \"correo\": \"in@imperdieteratnonummy.co.uk\",\n        \"telefono\": [\n            \"967 850 707\"\n        ],\n        \"edad\": 23\n    },\n    {\n        \"id\": 21,\n        \"nombre\": \"Malachi\",\n        \"apellidos\": \"Barber\",\n        \"correo\": \"lobortis.tellus.justo@lectusasollicitudin.co.uk\",\n        \"telefono\": [\n            \"946 271 069\"\n        ],\n        \"edad\": 51\n    },\n    {\n        \"id\": 22,\n        \"nombre\": \"Amaya\",\n        \"apellidos\": \"Owens\",\n        \"correo\": \"ornare.Fusce@interdum.ca\",\n        \"telefono\": [\n            \"916 710 443\"\n        ],\n        \"edad\": 67\n    },\n    {\n        \"id\": 23,\n        \"nombre\": \"Aaron\",\n        \"apellidos\": \"Thompson\",\n        \"correo\": \"faucibus.orci.luctus@tellus.ca\",\n        \"telefono\": [\n            \"928 801 096\"\n        ],\n        \"edad\": 40\n    },\n    {\n        \"id\": 24,\n        \"nombre\": \"Gisela\",\n        \"apellidos\": \"Bryant\",\n        \"correo\": \"montes.nascetur.ridiculus@habitantmorbi.net\",\n        \"telefono\": [\n            \"953 024 768\"\n        ],\n        \"edad\": 39\n    },\n    {\n        \"id\": 25,\n        \"nombre\": \"Cathleen\",\n        \"apellidos\": \"Anthony\",\n        \"correo\": \"egestas.Duis.ac@enim.org\",\n        \"telefono\": [\n            \"933 066 469\"\n        ],\n        \"edad\": 67\n    },\n    {\n        \"id\": 26,\n        \"nombre\": \"Cheyenne\",\n        \"apellidos\": \"Logan\",\n        \"correo\": \"elementum.at@sed.co.uk\",\n        \"telefono\": [\n            \"913 653 745\"\n        ],\n        \"edad\": 51\n    },\n    {\n        \"id\": 27,\n        \"nombre\": \"Jerry\",\n        \"apellidos\": \"House\",\n        \"correo\": \"Curabitur.consequat.lectus@utquam.co.uk\",\n        \"telefono\": [\n            \"958 299 990\"\n        ],\n        \"edad\": 45\n    },\n    {\n        \"id\": 28,\n        \"nombre\": \"Tamekah\",\n        \"apellidos\": \"Dudley\",\n        \"correo\": \"pharetra.felis.eget@lobortisauguescelerisque.ca\",\n        \"telefono\": [\n            \"949 619 671\"\n        ],\n        \"edad\": 18\n    },\n    {\n        \"id\": 29,\n        \"nombre\": \"Travis\",\n        \"apellidos\": \"Gonzales\",\n        \"correo\": \"mi.ac.mattis@gravidasagittis.ca\",\n        \"telefono\": [\n            \"976 316 630\"\n        ],\n        \"edad\": 38\n    },\n    {\n        \"id\": 30,\n        \"nombre\": \"Kibo\",\n        \"apellidos\": \"Boone\",\n        \"correo\": \"sed.libero.Proin@metusfacilisis.co.uk\",\n        \"telefono\": [\n            \"921 324 087\"\n        ],\n        \"edad\": 63\n    },\n    {\n        \"id\": 31,\n        \"nombre\": \"Uta\",\n        \"apellidos\": \"Foreman\",\n        \"correo\": \"Nulla@velitQuisque.net\",\n        \"telefono\": [\n            \"942 568 534\"\n        ],\n        \"edad\": 17\n    },\n    {\n        \"id\": 32,\n        \"nombre\": \"Miranda\",\n        \"apellidos\": \"Dillon\",\n        \"correo\": \"elementum.lorem.ut@utmolestiein.edu\",\n        \"telefono\": [\n            \"933 160 570\"\n        ],\n        \"edad\": 59\n    },\n    {\n        \"id\": 33,\n        \"nombre\": \"Freya\",\n        \"apellidos\": \"Moss\",\n        \"correo\": \"non.ante@nibhdolornonummy.net\",\n        \"telefono\": [\n            \"956 329 763\"\n        ],\n        \"edad\": 39\n    },\n    {\n        \"id\": 34,\n        \"nombre\": \"Cassidy\",\n        \"apellidos\": \"Hebert\",\n        \"correo\": \"dis@natoquepenatibuset.com\",\n        \"telefono\": [\n            \"997 321 532\"\n        ],\n        \"edad\": 39\n    },\n    {\n        \"id\": 35,\n        \"nombre\": \"Bethany\",\n        \"apellidos\": \"Wolf\",\n        \"correo\": \"eget@Sedeunibh.com\",\n        \"telefono\": [\n            \"934 539 179\"\n        ],\n        \"edad\": 39\n    },\n    {\n        \"id\": 36,\n        \"nombre\": \"Nichole\",\n        \"apellidos\": \"Roach\",\n        \"correo\": \"et@Integervitae.edu\",\n        \"telefono\": [\n            \"997 455 838\"\n        ],\n        \"edad\": 49\n    },\n    {\n        \"id\": 37,\n        \"nombre\": \"Tamara\",\n        \"apellidos\": \"Wade\",\n        \"correo\": \"adipiscing@Suspendissetristiqueneque.edu\",\n        \"telefono\": [\n            \"949 784 182\"\n        ],\n        \"edad\": 31\n    },\n    {\n        \"id\": 38,\n        \"nombre\": \"Brynne\",\n        \"apellidos\": \"Rivers\",\n        \"correo\": \"Pellentesque.ut.ipsum@necanteMaecenas.co.uk\",\n        \"telefono\": [\n            \"990 298 260\"\n        ],\n        \"edad\": 38\n    },\n    {\n        \"id\": 39,\n        \"nombre\": \"Quinn\",\n        \"apellidos\": \"Langley\",\n        \"correo\": \"ultrices@diam.edu\",\n        \"telefono\": [\n            \"961 603 714\"\n        ],\n        \"edad\": 48\n    },\n    {\n        \"id\": 40,\n        \"nombre\": \"Gavin\",\n        \"apellidos\": \"Patterson\",\n        \"correo\": \"ultricies@Donectempus.co.uk\",\n        \"telefono\": [\n            \"924 239 597\"\n        ],\n        \"edad\": 62\n    },\n    {\n        \"id\": 41,\n        \"nombre\": \"Zia\",\n        \"apellidos\": \"Ferrell\",\n        \"correo\": \"auctor.odio@nisiCumsociis.edu\",\n        \"telefono\": [\n            \"958 794 991\"\n        ],\n        \"edad\": 45\n    },\n    {\n        \"id\": 42,\n        \"nombre\": \"Wyatt\",\n        \"apellidos\": \"Day\",\n        \"correo\": \"diam.lorem@dolordolor.co.uk\",\n        \"telefono\": [\n            \"932 240 333\"\n        ],\n        \"edad\": 33\n    },\n    {\n        \"id\": 43,\n        \"nombre\": \"Hayley\",\n        \"apellidos\": \"Davidson\",\n        \"correo\": \"consectetuer.rhoncus@dignissim.edu\",\n        \"telefono\": [\n            \"904 445 205\"\n        ],\n        \"edad\": 41\n    },\n    {\n        \"id\": 44,\n        \"nombre\": \"Savannah\",\n        \"apellidos\": \"Gates\",\n        \"correo\": \"amet.risus.Donec@disparturientmontes.net\",\n        \"telefono\": [\n            \"956 399 874\"\n        ],\n        \"edad\": 56\n    },\n    {\n        \"id\": 45,\n        \"nombre\": \"Tana\",\n        \"apellidos\": \"Foreman\",\n        \"correo\": \"sem.vitae.aliquam@pedeCum.net\",\n        \"telefono\": [\n            \"916 480 288\"\n        ],\n        \"edad\": 53\n    },\n    {\n        \"id\": 46,\n        \"nombre\": \"Miranda\",\n        \"apellidos\": \"Lindsey\",\n        \"correo\": \"ipsum.primis.in@duiCraspellentesque.co.uk\",\n        \"telefono\": [\n            \"934 991 211\"\n        ],\n        \"edad\": 54\n    },\n    {\n        \"id\": 47,\n        \"nombre\": \"Sean\",\n        \"apellidos\": \"Dixon\",\n        \"correo\": \"rutrum.justo.Praesent@malesuadafames.net\",\n        \"telefono\": [\n            \"962 755 374\"\n        ],\n        \"edad\": 65\n    },\n    {\n        \"id\": 48,\n        \"nombre\": \"Jessica\",\n        \"apellidos\": \"Hardin\",\n        \"correo\": \"nec.orci@venenatisamagna.net\",\n        \"telefono\": [\n            \"902 176 106\"\n        ],\n        \"edad\": 35\n    },\n    {\n        \"id\": 49,\n        \"nombre\": \"Dana\",\n        \"apellidos\": \"Lowe\",\n        \"correo\": \"quis@liberolacusvarius.org\",\n        \"telefono\": [\n            \"958 811 159\"\n        ],\n        \"edad\": 43\n    },\n    {\n        \"id\": 50,\n        \"nombre\": \"Oliver\",\n        \"apellidos\": \"Sellers\",\n        \"correo\": \"facilisis.magna@sodalespurusin.org\",\n        \"telefono\": [\n            \"944 044 328\"\n        ],\n        \"edad\": 65\n    },\n    {\n        \"id\": 51,\n        \"nombre\": \"Lara\",\n        \"apellidos\": \"Strong\",\n        \"correo\": \"diam.Duis.mi@egestashendrerit.co.uk\",\n        \"telefono\": [\n            \"978 521 781\"\n        ],\n        \"edad\": 65\n    },\n    {\n        \"id\": 52,\n        \"nombre\": \"Judah\",\n        \"apellidos\": \"Williams\",\n        \"correo\": \"vel@etmagnis.net\",\n        \"telefono\": [\n            \"914 648 629\"\n        ],\n        \"edad\": 50\n    },\n    {\n        \"id\": 53,\n        \"nombre\": \"Signe\",\n        \"apellidos\": \"Lowery\",\n        \"correo\": \"viverra.Maecenas@magnaetipsum.ca\",\n        \"telefono\": [\n            \"930 698 403\"\n        ],\n        \"edad\": 61\n    },\n    {\n        \"id\": 54,\n        \"nombre\": \"Kaseem\",\n        \"apellidos\": \"Cohen\",\n        \"correo\": \"facilisis@habitant.net\",\n        \"telefono\": [\n            \"957 690 252\"\n        ],\n        \"edad\": 35\n    },\n    {\n        \"id\": 55,\n        \"nombre\": \"Walter\",\n        \"apellidos\": \"Hawkins\",\n        \"correo\": \"vitae@nequeIn.edu\",\n        \"telefono\": [\n            \"953 761 654\"\n        ],\n        \"edad\": 50\n    },\n    {\n        \"id\": 56,\n        \"nombre\": \"Robin\",\n        \"apellidos\": \"Gross\",\n        \"correo\": \"consectetuer.adipiscing@egetlaoreetposuere.com\",\n        \"telefono\": [\n            \"976 106 975\"\n        ],\n        \"edad\": 57\n    },\n    {\n        \"id\": 57,\n        \"nombre\": \"Maia\",\n        \"apellidos\": \"Melendez\",\n        \"correo\": \"conubia.nostra.per@Etiambibendumfermentum.org\",\n        \"telefono\": [\n            \"991 035 515\"\n        ],\n        \"edad\": 19\n    },\n    {\n        \"id\": 58,\n        \"nombre\": \"Kirsten\",\n        \"apellidos\": \"Allen\",\n        \"correo\": \"netus.et.malesuada@atortor.com\",\n        \"telefono\": [\n            \"935 576 317\"\n        ],\n        \"edad\": 33\n    },\n    {\n        \"id\": 59,\n        \"nombre\": \"Pearl\",\n        \"apellidos\": \"Dodson\",\n        \"correo\": \"enim.Curabitur@augueutlacus.net\",\n        \"telefono\": [\n            \"901 040 639\"\n        ],\n        \"edad\": 38\n    },\n    {\n        \"id\": 60,\n        \"nombre\": \"Debra\",\n        \"apellidos\": \"Hubbard\",\n        \"correo\": \"ut.quam@risus.edu\",\n        \"telefono\": [\n            \"944 428 108\"\n        ],\n        \"edad\": 66\n    },\n    {\n        \"id\": 61,\n        \"nombre\": \"Levi\",\n        \"apellidos\": \"Harrell\",\n        \"correo\": \"velit@ataugue.ca\",\n        \"telefono\": [\n            \"981 445 893\"\n        ],\n        \"edad\": 58\n    },\n    {\n        \"id\": 62,\n        \"nombre\": \"Quail\",\n        \"apellidos\": \"Martinez\",\n        \"correo\": \"Nunc.pulvinar@erosProin.edu\",\n        \"telefono\": [\n            \"950 540 401\"\n        ],\n        \"edad\": 33\n    },\n    {\n        \"id\": 63,\n        \"nombre\": \"Nayda\",\n        \"apellidos\": \"Garza\",\n        \"correo\": \"libero.Proin@lobortisnisinibh.net\",\n        \"telefono\": [\n            \"949 440 139\"\n        ],\n        \"edad\": 49\n    },\n    {\n        \"id\": 64,\n        \"nombre\": \"Anthony\",\n        \"apellidos\": \"Foster\",\n        \"correo\": \"arcu.et@morbitristique.co.uk\",\n        \"telefono\": [\n            \"994 379 993\"\n        ],\n        \"edad\": 31\n    },\n    {\n        \"id\": 65,\n        \"nombre\": \"Kay\",\n        \"apellidos\": \"Daniels\",\n        \"correo\": \"vitae@vestibulum.net\",\n        \"telefono\": [\n            \"986 158 188\"\n        ],\n        \"edad\": 44\n    },\n    {\n        \"id\": 66,\n        \"nombre\": \"Amaya\",\n        \"apellidos\": \"Daniel\",\n        \"correo\": \"dolor@Maecenas.ca\",\n        \"telefono\": [\n            \"954 849 380\"\n        ],\n        \"edad\": 35\n    },\n    {\n        \"id\": 67,\n        \"nombre\": \"Octavius\",\n        \"apellidos\": \"Sullivan\",\n        \"correo\": \"ipsum.dolor@risusodio.net\",\n        \"telefono\": [\n            \"913 928 466\"\n        ],\n        \"edad\": 44\n    },\n    {\n        \"id\": 68,\n        \"nombre\": \"Rhiannon\",\n        \"apellidos\": \"Daniel\",\n        \"correo\": \"sem@idantedictum.co.uk\",\n        \"telefono\": [\n            \"976 881 269\"\n        ],\n        \"edad\": 48\n    },\n    {\n        \"id\": 69,\n        \"nombre\": \"Ian\",\n        \"apellidos\": \"Lucas\",\n        \"correo\": \"tristique.aliquet.Phasellus@uterosnon.org\",\n        \"telefono\": [\n            \"974 810 965\"\n        ],\n        \"edad\": 33\n    },\n    {\n        \"id\": 70,\n        \"nombre\": \"Eugenia\",\n        \"apellidos\": \"Holt\",\n        \"correo\": \"laoreet.posuere@enim.co.uk\",\n        \"telefono\": [\n            \"900 928 243\"\n        ],\n        \"edad\": 18\n    },\n    {\n        \"id\": 71,\n        \"nombre\": \"Kiara\",\n        \"apellidos\": \"Soto\",\n        \"correo\": \"iaculis.lacus@per.co.uk\",\n        \"telefono\": [\n            \"913 929 675\"\n        ],\n        \"edad\": 22\n    },\n    {\n        \"id\": 72,\n        \"nombre\": \"Tanner\",\n        \"apellidos\": \"Emerson\",\n        \"correo\": \"nec@tellusfaucibusleo.edu\",\n        \"telefono\": [\n            \"931 619 323\"\n        ],\n        \"edad\": 54\n    },\n    {\n        \"id\": 73,\n        \"nombre\": \"Zeph\",\n        \"apellidos\": \"Lindsay\",\n        \"correo\": \"orci.sem.eget@liberoest.org\",\n        \"telefono\": [\n            \"941 092 993\"\n        ],\n        \"edad\": 51\n    },\n    {\n        \"id\": 74,\n        \"nombre\": \"Bert\",\n        \"apellidos\": \"Thompson\",\n        \"correo\": \"egestas.urna.justo@adipiscing.net\",\n        \"telefono\": [\n            \"947 748 332\"\n        ],\n        \"edad\": 31\n    },\n    {\n        \"id\": 75,\n        \"nombre\": \"Sierra\",\n        \"apellidos\": \"Klein\",\n        \"correo\": \"nascetur.ridiculus@enim.org\",\n        \"telefono\": [\n            \"949 942 680\"\n        ],\n        \"edad\": 49\n    },\n    {\n        \"id\": 76,\n        \"nombre\": \"Tarik\",\n        \"apellidos\": \"Steele\",\n        \"correo\": \"ante@etrutrum.com\",\n        \"telefono\": [\n            \"903 441 586\"\n        ],\n        \"edad\": 29\n    },\n    {\n        \"id\": 77,\n        \"nombre\": \"Violet\",\n        \"apellidos\": \"Mendoza\",\n        \"correo\": \"elementum@odiotristique.com\",\n        \"telefono\": [\n            \"954 011 316\"\n        ],\n        \"edad\": 48\n    },\n    {\n        \"id\": 78,\n        \"nombre\": \"Micah\",\n        \"apellidos\": \"Kim\",\n        \"correo\": \"diam.Sed.diam@ametorci.org\",\n        \"telefono\": [\n            \"910 935 794\"\n        ],\n        \"edad\": 16\n    },\n    {\n        \"id\": 79,\n        \"nombre\": \"Chanda\",\n        \"apellidos\": \"Mcfarland\",\n        \"correo\": \"Etiam.ligula@egetmagna.com\",\n        \"telefono\": [\n            \"917 878 984\"\n        ],\n        \"edad\": 28\n    },\n    {\n        \"id\": 80,\n        \"nombre\": \"Nayda\",\n        \"apellidos\": \"Watkins\",\n        \"correo\": \"eleifend.egestas@utodiovel.com\",\n        \"telefono\": [\n            \"929 776 731\"\n        ],\n        \"edad\": 58\n    },\n    {\n        \"id\": 81,\n        \"nombre\": \"Olga\",\n        \"apellidos\": \"Bird\",\n        \"correo\": \"enim@estmauris.com\",\n        \"telefono\": [\n            \"920 403 320\"\n        ],\n        \"edad\": 61\n    },\n    {\n        \"id\": 82,\n        \"nombre\": \"Selma\",\n        \"apellidos\": \"Dickson\",\n        \"correo\": \"odio.Phasellus@aodiosemper.edu\",\n        \"telefono\": [\n            \"908 511 778\"\n        ],\n        \"edad\": 57\n    },\n    {\n        \"id\": 83,\n        \"nombre\": \"Moses\",\n        \"apellidos\": \"Mcbride\",\n        \"correo\": \"pede.sagittis.augue@Donecestmauris.ca\",\n        \"telefono\": [\n            \"995 183 430\"\n        ],\n        \"edad\": 58\n    },\n    {\n        \"id\": 84,\n        \"nombre\": \"Shana\",\n        \"apellidos\": \"Goodman\",\n        \"correo\": \"tempor.lorem@nasceturridiculus.edu\",\n        \"telefono\": [\n            \"909 061 561\"\n        ],\n        \"edad\": 58\n    },\n    {\n        \"id\": 85,\n        \"nombre\": \"Nathan\",\n        \"apellidos\": \"Small\",\n        \"correo\": \"vel.quam@Nullam.com\",\n        \"telefono\": [\n            \"983 110 228\"\n        ],\n        \"edad\": 65\n    },\n    {\n        \"id\": 86,\n        \"nombre\": \"Diana\",\n        \"apellidos\": \"Kane\",\n        \"correo\": \"urna@facilisis.com\",\n        \"telefono\": [\n            \"961 830 646\"\n        ],\n        \"edad\": 65\n    },\n    {\n        \"id\": 87,\n        \"nombre\": \"Macaulay\",\n        \"apellidos\": \"Knapp\",\n        \"correo\": \"risus.Nunc.ac@etrisusQuisque.co.uk\",\n        \"telefono\": [\n            \"974 427 770\"\n        ],\n        \"edad\": 39\n    },\n    {\n        \"id\": 88,\n        \"nombre\": \"Stephanie\",\n        \"apellidos\": \"Mcbride\",\n        \"correo\": \"commodo.hendrerit@gravidamauris.com\",\n        \"telefono\": [\n            \"973 700 506\"\n        ],\n        \"edad\": 27\n    },\n    {\n        \"id\": 89,\n        \"nombre\": \"Evelyn\",\n        \"apellidos\": \"Hendricks\",\n        \"correo\": \"tempor@adipiscingfringillaporttitor.co.uk\",\n        \"telefono\": [\n            \"920 165 922\"\n        ],\n        \"edad\": 38\n    },\n    {\n        \"id\": 90,\n        \"nombre\": \"Donna\",\n        \"apellidos\": \"Crane\",\n        \"correo\": \"elit.Aliquam.auctor@dictumeu.ca\",\n        \"telefono\": [\n            \"901 089 355\"\n        ],\n        \"edad\": 36\n    },\n    {\n        \"id\": 91,\n        \"nombre\": \"Colette\",\n        \"apellidos\": \"Golden\",\n        \"correo\": \"Mauris.ut@Aliquamerat.com\",\n        \"telefono\": [\n            \"996 983 161\"\n        ],\n        \"edad\": 19\n    },\n    {\n        \"id\": 92,\n        \"nombre\": \"Macey\",\n        \"apellidos\": \"Hurley\",\n        \"correo\": \"malesuada@elit.net\",\n        \"telefono\": [\n            \"943 341 863\"\n        ],\n        \"edad\": 29\n    },\n    {\n        \"id\": 93,\n        \"nombre\": \"Hop\",\n        \"apellidos\": \"Rosa\",\n        \"correo\": \"Mauris.blandit@tincidunt.org\",\n        \"telefono\": [\n            \"934 773 895\"\n        ],\n        \"edad\": 22\n    },\n    {\n        \"id\": 94,\n        \"nombre\": \"Macon\",\n        \"apellidos\": \"Holcomb\",\n        \"correo\": \"urna.justo@eu.edu\",\n        \"telefono\": [\n            \"949 507 110\"\n        ],\n        \"edad\": 31\n    },\n    {\n        \"id\": 95,\n        \"nombre\": \"Damian\",\n        \"apellidos\": \"Stevenson\",\n        \"correo\": \"elementum.purus.accumsan@antebibendum.ca\",\n        \"telefono\": [\n            \"919 163 183\"\n        ],\n        \"edad\": 61\n    },\n    {\n        \"id\": 96,\n        \"nombre\": \"Kim\",\n        \"apellidos\": \"Wheeler\",\n        \"correo\": \"consectetuer.ipsum.nunc@Namtempor.com\",\n        \"telefono\": [\n            \"965 380 061\"\n        ],\n        \"edad\": 33\n    },\n    {\n        \"id\": 97,\n        \"nombre\": \"Preston\",\n        \"apellidos\": \"Ferguson\",\n        \"correo\": \"turpis@tinciduntDonec.com\",\n        \"telefono\": [\n            \"983 545 530\"\n        ],\n        \"edad\": 19\n    },\n    {\n        \"id\": 98,\n        \"nombre\": \"India\",\n        \"apellidos\": \"Wilkinson\",\n        \"correo\": \"sit.amet@lectus.org\",\n        \"telefono\": [\n            \"995 891 074\"\n        ],\n        \"edad\": 62\n    },\n    {\n        \"id\": 99,\n        \"nombre\": \"Lydia\",\n        \"apellidos\": \"Herman\",\n        \"correo\": \"urna.justo.faucibus@euismodetcommodo.net\",\n        \"telefono\": [\n            \"983 920 589\"\n        ],\n        \"edad\": 35\n    },\n    {\n        \"id\": 100,\n        \"nombre\": \"Virginia\",\n        \"apellidos\": \"Dodson\",\n        \"correo\": \"diam.at@ultricies.edu\",\n        \"telefono\": [\n            \"910 838 228\"\n        ],\n        \"edad\": 53\n    }\n]"
+										}
+									]
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Carpeta: Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "KO",
+							"item": [
+								{
+									"name": "400",
+									"item": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET ONE",
+					"item": [
+						{
+							"name": "OK",
+							"item": [
+								{
+									"name": "Una persona",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var schema =  {\r",
+													"\t\"definitions\": {},\r",
+													"\t\"$schema\": \"http://json-schema.org/draft-07/schema#\", \r",
+													"\t\"$id\": \"https://example.com/object1682434113.json\", \r",
+													"\t\"title\": \"Root\", \r",
+													"\t\"type\": \"object\",\r",
+													"\t\"required\": [\r",
+													"\t\t\"id\",\r",
+													"\t\t\"nombre\"\r",
+													"\t],\r",
+													"\t\"properties\": {\r",
+													"\t\t\"id\": {\r",
+													"\t\t\t\"$id\": \"#root/id\", \r",
+													"\t\t\t\"title\": \"Id\", \r",
+													"\t\t\t\"type\": \"integer\",\r",
+													"\t\t\t\"default\": 0\r",
+													"\t\t},\r",
+													"\t\t\"nombre\": {\r",
+													"\t\t\t\"$id\": \"#root/nombre\", \r",
+													"\t\t\t\"title\": \"Nombre\", \r",
+													"\t\t\t\"type\": \"string\",\r",
+													"\t\t\t\"default\": \"\",\r",
+													"\t\t\t\"pattern\": \"^.*$\"\r",
+													"\t\t},\r",
+													"\t\t\"apellidos\": {\r",
+													"\t\t\t\"$id\": \"#root/apellidos\", \r",
+													"\t\t\t\"title\": \"Apellidos\", \r",
+													"\t\t\t\"type\": \"string\",\r",
+													"\t\t\t\"default\": \"\",\r",
+													"\t\t\t\"pattern\": \"^.*$\"\r",
+													"\t\t},\r",
+													"\t\t\"correo\": {\r",
+													"\t\t\t\"$id\": \"#root/correo\", \r",
+													"\t\t\t\"title\": \"Correo\", \r",
+													"\t\t\t\"type\": \"string\",\r",
+													"\t\t\t\"default\": \"\",\r",
+													"\t\t\t\"pattern\": \"^[^@]+@[^@]+\\.[a-zA-Z]{2,}$\"\r",
+													"\t\t},\r",
+													"\t\t\"telefono\": {\r",
+													"\t\t\t\"$id\": \"#root/telefono\", \r",
+													"\t\t\t\"title\": \"Telefono\", \r",
+													"\t\t\t\"type\": \"array\",\r",
+													"\t\t\t\"default\": [],\r",
+													"\t\t\t\"items\":{\r",
+													"\t\t\t\t\"$id\": \"#root/telefono/items\", \r",
+													"\t\t\t\t\"title\": \"Items\", \r",
+													"\t\t\t\t\"type\": \"string\",\r",
+													"\t\t\t\t\"default\": \"\",\r",
+													"\t\t\t\t\"pattern\": \"^.*$\"\r",
+													"\t\t\t}\r",
+													"\t\t},\r",
+													"\t\t\"edad\": {\r",
+													"\t\t\t\"$id\": \"#root/edad\", \r",
+													"\t\t\t\"title\": \"Edad\", \r",
+													"\t\t\t\"type\": \"integer\",\r",
+													"            \"minimum\": 16,\r",
+													"            \"maximum\": 67,\r",
+													"\t\t\t\"default\": 0\r",
+													"\t\t}\r",
+													"\t}\r",
+													"};\r",
+													"\r",
+													"pm.test('Schema is valid', function() {\r",
+													"  pm.response.to.have.jsonSchema(schema);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas/:id",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "100"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "KO",
+							"item": [
+								{
+									"name": "404",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas/:id",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9999"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "OK",
+							"item": [
+								{
+									"name": "Una persona",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 0,\r\n    \"nombre\": \"COMO\",\r\n    \"apellidos\": \"Me Llamo\",\r\n    \"email\": \"kk@kk\",\r\n    \"edad\": 60\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.success",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "KO",
+							"item": [
+								{
+									"name": "400 Falta el nombre",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 0,\r\n    \"nombre\": null,\r\n    \"apellidos\": \"Me Llamo\",\r\n    \"edad\": 60\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "400 Edad incorrecta",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 0,\r\n    \"nombre\": \"nombre\",\r\n    \"apellidos\": \"Me Llamo\",\r\n    \"edad\": 99\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "415",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url_base}}/api/personas",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"description": "Creación de personas"
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "OK",
+							"item": [
+								{
+									"name": "Una persona",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 101,\r\n    \"nombre\": \"No\",\r\n    \"apellidos\": \"Me Llamo\",\r\n    \"edad\": 22\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas/101",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas",
+												"101"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "KO",
+							"item": [
+								{
+									"name": "404",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas/:id",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9999"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "OK",
+							"item": [
+								{
+									"name": "Una persona",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas/:id",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "101"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "KO",
+							"item": [
+								{
+									"name": "404",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/api/personas/:id",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"api",
+												"personas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9999"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{usr}}\",\r\n    \"password\": \"P@$$w0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eco",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "postman-echo.com/get",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_base",
+			"value": "http://localhost:8181",
+			"type": "string"
+		},
+		{
+			"key": "recurso",
+			"value": "personas"
+		}
+	]
+}

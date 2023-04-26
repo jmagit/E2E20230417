@@ -1,0 +1,1207 @@
+{
+	"info": {
+		"_postman_id": "84f8b4fb-b0b8-4dcf-a9b0-ac6f7a0f20b7",
+		"name": "Microservicio: Peritación",
+		"description": "Ejemplo de API First. Acceso de los peritos a los encargos.\n\nContact Support:\n Name: Yo Mismo\n Email: myeaddress@example.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8273928",
+		"_collection_link": "https://www.postman.com/red-flare-4265/workspace/ejemplos/collection/8273928-84f8b4fb-b0b8-4dcf-a9b0-ac6f7a0f20b7?action=share&creator=8273928&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "peritos",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Recuperar los datos de un perito",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/peritos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Identificador del perito"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"nombre\": \"Rodney\",\n    \"apellidos\": \"Heinzler\",\n    \"correo\": \"rheinzler0@fema.gov\",\n    \"telefono\": \"430 250 7723\",\n    \"modificado\": \"2022-07-05T10:57:08Z\"\n  }"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Modificar los datos de un perito existente",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"correo\": \"<string>\",\n  \"telefono\": \"<string>\",\n  \"modificado\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/peritos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Identificador del perito"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"correo\": \"<string>\",\n  \"telefono\": \"<string>\",\n  \"modificado\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Borrar los datos de un perito existente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Identificador del perito"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/peritos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"peritos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Identificador del perito"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Listado de peritos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/peritos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"peritos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 1,\n    \"nombre\": \"Rodney\",\n    \"apellidos\": \"Heinzler\",\n    \"correo\": \"rheinzler0@fema.gov\",\n    \"telefono\": \"430 250 7723\",\n    \"modificado\": \"2022-07-05T10:57:08Z\"\n  }, {\n    \"id\": 2,\n    \"nombre\": \"Eolanda\",\n    \"apellidos\": \"Grafton-Herbert\",\n    \"correo\": \"egraftonherbert1@cisco.com\",\n    \"telefono\": \"977 889 5908\",\n    \"modificado\": \"2023-04-09T10:33:54Z\"\n  }, {\n    \"id\": 3,\n    \"nombre\": \"Maurizio\",\n    \"apellidos\": \"Huddart\",\n    \"correo\": \"mhuddart2@google.it\",\n    \"telefono\": \"855 578 8483\",\n    \"modificado\": \"2022-09-07T10:59:27Z\"\n  }, {\n    \"id\": 4,\n    \"nombre\": \"Ivory\",\n    \"apellidos\": \"Cloney\",\n    \"correo\": \"icloney3@fc2.com\",\n    \"telefono\": \"425 963 8466\",\n    \"modificado\": \"2022-12-05T06:01:30Z\"\n  }, {\n    \"id\": 5,\n    \"nombre\": \"Berenice\",\n    \"apellidos\": \"McGing\",\n    \"correo\": \"bmcging4@miibeian.gov.cn\",\n    \"telefono\": \"397 973 0992\",\n    \"modificado\": \"2023-02-01T19:47:03Z\"\n  }, {\n    \"id\": 6,\n    \"nombre\": \"Barton\",\n    \"apellidos\": \"Eschelle\",\n    \"correo\": \"beschelle5@dyndns.org\",\n    \"telefono\": \"857 645 2417\",\n    \"modificado\": \"2023-04-02T02:25:58Z\"\n  }, {\n    \"id\": 7,\n    \"nombre\": \"Lottie\",\n    \"apellidos\": \"D'Acth\",\n    \"correo\": \"ldacth6@mysql.com\",\n    \"telefono\": \"612 637 6760\",\n    \"modificado\": \"2022-05-14T04:21:01Z\"\n  }, {\n    \"id\": 8,\n    \"nombre\": \"Elvis\",\n    \"apellidos\": \"Camidge\",\n    \"correo\": \"ecamidge7@feedburner.com\",\n    \"telefono\": \"223 853 5977\",\n    \"modificado\": \"2023-04-10T03:02:00Z\"\n  }, {\n    \"id\": 9,\n    \"nombre\": \"Issy\",\n    \"apellidos\": \"Angell\",\n    \"correo\": \"iangell8@alibaba.com\",\n    \"telefono\": \"226 167 4525\",\n    \"modificado\": \"2022-08-10T16:33:50Z\"\n  }, {\n    \"id\": 10,\n    \"nombre\": \"Kale\",\n    \"apellidos\": \"Jado\",\n    \"correo\": \"kjado9@comsenz.com\",\n    \"telefono\": \"760 247 2972\",\n    \"modificado\": \"2022-12-03T14:28:35Z\"\n  }, {\n    \"id\": 11,\n    \"nombre\": \"Sharron\",\n    \"apellidos\": \"Chatband\",\n    \"correo\": \"schatbanda@cbslocal.com\",\n    \"telefono\": \"150 223 4637\",\n    \"modificado\": \"2022-06-10T21:43:43Z\"\n  }, {\n    \"id\": 12,\n    \"nombre\": \"Charlot\",\n    \"apellidos\": \"Josephoff\",\n    \"correo\": \"cjosephoffb@cam.ac.uk\",\n    \"telefono\": \"220 499 2196\",\n    \"modificado\": \"2022-09-22T14:27:11Z\"\n  }, {\n    \"id\": 13,\n    \"nombre\": \"Walliw\",\n    \"apellidos\": \"Pragnell\",\n    \"correo\": \"wpragnellc@sun.com\",\n    \"telefono\": \"920 956 1693\",\n    \"modificado\": \"2023-03-27T05:54:45Z\"\n  }, {\n    \"id\": 14,\n    \"nombre\": \"Mufinella\",\n    \"apellidos\": \"Merriton\",\n    \"correo\": \"mmerritond@illinois.edu\",\n    \"telefono\": \"491 403 0407\",\n    \"modificado\": \"2022-06-26T04:52:42Z\"\n  }, {\n    \"id\": 15,\n    \"nombre\": \"Wallie\",\n    \"apellidos\": \"Douthwaite\",\n    \"correo\": \"wdouthwaitee@exblog.jp\",\n    \"telefono\": \"806 381 7402\",\n    \"modificado\": \"2022-04-27T12:32:08Z\"\n  }, {\n    \"id\": 16,\n    \"nombre\": \"Britney\",\n    \"apellidos\": \"Grestye\",\n    \"correo\": \"bgrestyef@symantec.com\",\n    \"telefono\": \"807 988 1977\",\n    \"modificado\": \"2022-07-09T02:13:28Z\"\n  }, {\n    \"id\": 17,\n    \"nombre\": \"Jeniece\",\n    \"apellidos\": \"Mellon\",\n    \"correo\": \"jmellong@upenn.edu\",\n    \"telefono\": \"522 218 5318\",\n    \"modificado\": \"2022-12-09T17:42:48Z\"\n  }, {\n    \"id\": 18,\n    \"nombre\": \"Ingra\",\n    \"apellidos\": \"Overpool\",\n    \"correo\": \"ioverpoolh@mozilla.com\",\n    \"telefono\": \"983 879 4718\",\n    \"modificado\": \"2022-05-18T19:13:29Z\"\n  }, {\n    \"id\": 19,\n    \"nombre\": \"Blakeley\",\n    \"apellidos\": \"Pashby\",\n    \"correo\": \"bpashbyi@sciencedirect.com\",\n    \"telefono\": \"984 305 5014\",\n    \"modificado\": \"2022-10-11T23:08:53Z\"\n  }, {\n    \"id\": 20,\n    \"nombre\": \"Emilia\",\n    \"apellidos\": \"Eneas\",\n    \"correo\": \"eeneasj@sourceforge.net\",\n    \"telefono\": \"939 617 9598\",\n    \"modificado\": \"2022-05-26T18:02:28Z\"\n  }, {\n    \"id\": 21,\n    \"nombre\": \"Doria\",\n    \"apellidos\": \"Kopp\",\n    \"correo\": \"dkoppk@thetimes.co.uk\",\n    \"telefono\": \"495 567 2612\",\n    \"modificado\": \"2023-03-10T21:47:59Z\"\n  }, {\n    \"id\": 22,\n    \"nombre\": \"Nadeen\",\n    \"apellidos\": \"Farnorth\",\n    \"correo\": \"nfarnorthl@weibo.com\",\n    \"telefono\": \"393 150 5607\",\n    \"modificado\": \"2022-12-19T17:05:42Z\"\n  }, {\n    \"id\": 23,\n    \"nombre\": \"Vinita\",\n    \"apellidos\": \"Loreit\",\n    \"correo\": \"vloreitm@aboutads.info\",\n    \"telefono\": \"573 831 2150\",\n    \"modificado\": \"2022-08-25T08:54:35Z\"\n  }, {\n    \"id\": 24,\n    \"nombre\": \"Ashlen\",\n    \"apellidos\": \"Fergyson\",\n    \"correo\": \"afergysonn@google.fr\",\n    \"telefono\": \"259 138 5105\",\n    \"modificado\": \"2022-11-28T16:47:51Z\"\n  }, {\n    \"id\": 25,\n    \"nombre\": \"Tammie\",\n    \"apellidos\": \"L'Amie\",\n    \"correo\": \"tlamieo@plala.or.jp\",\n    \"telefono\": \"912 970 5218\",\n    \"modificado\": \"2022-08-20T02:08:32Z\"\n  }, {\n    \"id\": 26,\n    \"nombre\": \"Carney\",\n    \"apellidos\": \"Werlock\",\n    \"correo\": \"cwerlockp@wikimedia.org\",\n    \"telefono\": \"801 584 7731\",\n    \"modificado\": \"2023-01-01T03:59:47Z\"\n  }, {\n    \"id\": 27,\n    \"nombre\": \"Orelle\",\n    \"apellidos\": \"Knewstubb\",\n    \"correo\": \"oknewstubbq@hc360.com\",\n    \"telefono\": \"972 404 2752\",\n    \"modificado\": \"2022-12-19T18:26:01Z\"\n  }, {\n    \"id\": 28,\n    \"nombre\": \"Harald\",\n    \"apellidos\": \"Raper\",\n    \"correo\": \"hraperr@1und1.de\",\n    \"telefono\": \"653 858 2485\",\n    \"modificado\": \"2022-11-09T07:36:01Z\"\n  }, {\n    \"id\": 29,\n    \"nombre\": \"Elia\",\n    \"apellidos\": \"Fairy\",\n    \"correo\": \"efairys@webnode.com\",\n    \"telefono\": \"536 248 1092\",\n    \"modificado\": \"2022-06-14T12:51:02Z\"\n  }, {\n    \"id\": 30,\n    \"nombre\": \"Alexandra\",\n    \"apellidos\": \"Woolfoot\",\n    \"correo\": \"awoolfoott@cam.ac.uk\",\n    \"telefono\": \"645 391 1015\",\n    \"modificado\": \"2022-09-10T23:59:10Z\"\n  }, {\n    \"id\": 31,\n    \"nombre\": \"Penelope\",\n    \"apellidos\": \"Lockyear\",\n    \"correo\": \"plockyearu@histats.com\",\n    \"telefono\": \"474 402 0932\",\n    \"modificado\": \"2022-08-24T02:54:20Z\"\n  }, {\n    \"id\": 32,\n    \"nombre\": \"Yovonnda\",\n    \"apellidos\": \"Bruun\",\n    \"correo\": \"ybruunv@ted.com\",\n    \"telefono\": \"990 820 0463\",\n    \"modificado\": \"2022-07-18T08:17:28Z\"\n  }, {\n    \"id\": 33,\n    \"nombre\": \"Ulrikaumeko\",\n    \"apellidos\": \"Slott\",\n    \"correo\": \"uslottw@smh.com.au\",\n    \"telefono\": \"728 517 8056\",\n    \"modificado\": \"2023-01-18T16:28:22Z\"\n  }, {\n    \"id\": 34,\n    \"nombre\": \"Edward\",\n    \"apellidos\": \"Dow\",\n    \"correo\": \"edowx@gov.uk\",\n    \"telefono\": \"385 911 6188\",\n    \"modificado\": \"2023-03-07T18:05:08Z\"\n  }, {\n    \"id\": 35,\n    \"nombre\": \"Richie\",\n    \"apellidos\": \"Andor\",\n    \"correo\": \"randory@phoca.cz\",\n    \"telefono\": \"266 339 8200\",\n    \"modificado\": \"2022-10-02T09:20:51Z\"\n  }, {\n    \"id\": 36,\n    \"nombre\": \"Elspeth\",\n    \"apellidos\": \"McGarvie\",\n    \"correo\": \"emcgarviez@jalbum.net\",\n    \"telefono\": \"679 303 9243\",\n    \"modificado\": \"2022-06-14T12:23:44Z\"\n  }, {\n    \"id\": 37,\n    \"nombre\": \"Morley\",\n    \"apellidos\": \"Pallesen\",\n    \"correo\": \"mpallesen10@bluehost.com\",\n    \"telefono\": \"339 899 4902\",\n    \"modificado\": \"2022-07-04T12:19:19Z\"\n  }, {\n    \"id\": 38,\n    \"nombre\": \"Adorne\",\n    \"apellidos\": \"Melledy\",\n    \"correo\": \"amelledy11@example.com\",\n    \"telefono\": \"955 433 6753\",\n    \"modificado\": \"2022-09-16T05:45:16Z\"\n  }, {\n    \"id\": 39,\n    \"nombre\": \"Elisha\",\n    \"apellidos\": \"Bertrand\",\n    \"correo\": \"ebertrand12@disqus.com\",\n    \"telefono\": \"502 353 8382\",\n    \"modificado\": \"2022-10-23T18:48:09Z\"\n  }, {\n    \"id\": 40,\n    \"nombre\": \"Bengt\",\n    \"apellidos\": \"Ormes\",\n    \"correo\": \"bormes13@epa.gov\",\n    \"telefono\": \"901 755 8311\",\n    \"modificado\": \"2022-11-29T23:18:03Z\"\n  }, {\n    \"id\": 41,\n    \"nombre\": \"Dicky\",\n    \"apellidos\": \"Bearcock\",\n    \"correo\": \"dbearcock14@about.com\",\n    \"telefono\": \"400 470 1607\",\n    \"modificado\": \"2022-08-20T10:07:45Z\"\n  }, {\n    \"id\": 42,\n    \"nombre\": \"Hester\",\n    \"apellidos\": \"Silcocks\",\n    \"correo\": \"hsilcocks15@ycombinator.com\",\n    \"telefono\": \"103 825 5116\",\n    \"modificado\": \"2022-09-07T23:43:20Z\"\n  }, {\n    \"id\": 43,\n    \"nombre\": \"Celina\",\n    \"apellidos\": \"Teffrey\",\n    \"correo\": \"cteffrey16@xing.com\",\n    \"telefono\": \"659 243 1896\",\n    \"modificado\": \"2022-06-12T04:52:44Z\"\n  }, {\n    \"id\": 44,\n    \"nombre\": \"Jens\",\n    \"apellidos\": \"Iannuzzelli\",\n    \"correo\": \"jiannuzzelli17@howstuffworks.com\",\n    \"telefono\": \"364 732 5434\",\n    \"modificado\": \"2022-09-05T21:54:51Z\"\n  }, {\n    \"id\": 45,\n    \"nombre\": \"Willy\",\n    \"apellidos\": \"Rennison\",\n    \"correo\": \"wrennison18@google.pl\",\n    \"telefono\": \"587 913 5752\",\n    \"modificado\": \"2022-08-12T15:13:34Z\"\n  }, {\n    \"id\": 46,\n    \"nombre\": \"Adrianne\",\n    \"apellidos\": \"Savill\",\n    \"correo\": \"asavill19@nsw.gov.au\",\n    \"telefono\": \"866 685 2722\",\n    \"modificado\": \"2022-04-29T10:42:45Z\"\n  }, {\n    \"id\": 47,\n    \"nombre\": \"Eldon\",\n    \"apellidos\": \"Astupenas\",\n    \"correo\": \"eastupenas1a@oaic.gov.au\",\n    \"telefono\": \"612 352 7799\",\n    \"modificado\": \"2023-04-02T14:52:07Z\"\n  }, {\n    \"id\": 48,\n    \"nombre\": \"Ava\",\n    \"apellidos\": \"Quinton\",\n    \"correo\": \"aquinton1b@cam.ac.uk\",\n    \"telefono\": \"215 690 7004\",\n    \"modificado\": \"2022-12-02T19:49:34Z\"\n  }, {\n    \"id\": 49,\n    \"nombre\": \"Jemimah\",\n    \"apellidos\": \"Instone\",\n    \"correo\": \"jinstone1c@usda.gov\",\n    \"telefono\": \"532 432 4416\",\n    \"modificado\": \"2023-01-11T01:31:02Z\"\n  }, {\n    \"id\": 50,\n    \"nombre\": \"Tiphani\",\n    \"apellidos\": \"Coffelt\",\n    \"correo\": \"tcoffelt1d@sina.com.cn\",\n    \"telefono\": \"966 973 1271\",\n    \"modificado\": \"2022-10-17T14:52:07Z\"\n  }, {\n    \"id\": 51,\n    \"nombre\": \"Rey\",\n    \"apellidos\": \"McKinnon\",\n    \"correo\": \"rmckinnon1e@altervista.org\",\n    \"telefono\": \"667 714 2420\",\n    \"modificado\": \"2023-03-01T00:49:23Z\"\n  }, {\n    \"id\": 52,\n    \"nombre\": \"Ketti\",\n    \"apellidos\": \"Bleythin\",\n    \"correo\": \"kbleythin1f@google.ca\",\n    \"telefono\": \"320 771 7704\",\n    \"modificado\": \"2022-10-11T04:29:59Z\"\n  }, {\n    \"id\": 53,\n    \"nombre\": \"Ambrose\",\n    \"apellidos\": \"Sommers\",\n    \"correo\": \"asommers1g@walmart.com\",\n    \"telefono\": \"219 479 5941\",\n    \"modificado\": \"2023-01-17T02:57:41Z\"\n  }, {\n    \"id\": 54,\n    \"nombre\": \"Kasper\",\n    \"apellidos\": \"Titterrell\",\n    \"correo\": \"ktitterrell1h@adobe.com\",\n    \"telefono\": \"484 419 7488\",\n    \"modificado\": \"2022-08-30T13:03:22Z\"\n  }, {\n    \"id\": 55,\n    \"nombre\": \"Karola\",\n    \"apellidos\": \"Wiper\",\n    \"correo\": \"kwiper1i@google.com.br\",\n    \"telefono\": \"185 413 0949\",\n    \"modificado\": \"2022-12-07T17:40:42Z\"\n  }, {\n    \"id\": 56,\n    \"nombre\": \"Maisey\",\n    \"apellidos\": \"Woodthorpe\",\n    \"correo\": \"mwoodthorpe1j@miibeian.gov.cn\",\n    \"telefono\": \"343 917 0277\",\n    \"modificado\": \"2022-06-25T03:35:59Z\"\n  }, {\n    \"id\": 57,\n    \"nombre\": \"Devy\",\n    \"apellidos\": \"Gyorgy\",\n    \"correo\": \"dgyorgy1k@webmd.com\",\n    \"telefono\": \"570 773 3755\",\n    \"modificado\": \"2023-03-27T10:25:05Z\"\n  }, {\n    \"id\": 58,\n    \"nombre\": \"Atlante\",\n    \"apellidos\": \"Kytter\",\n    \"correo\": \"akytter1l@nsw.gov.au\",\n    \"telefono\": \"942 759 4057\",\n    \"modificado\": \"2022-06-07T18:08:38Z\"\n  }, {\n    \"id\": 59,\n    \"nombre\": \"Darya\",\n    \"apellidos\": \"Blackshaw\",\n    \"correo\": \"dblackshaw1m@nyu.edu\",\n    \"telefono\": \"673 417 4274\",\n    \"modificado\": \"2022-11-25T22:20:34Z\"\n  }, {\n    \"id\": 60,\n    \"nombre\": \"Sonni\",\n    \"apellidos\": \"Plant\",\n    \"correo\": \"splant1n@microsoft.com\",\n    \"telefono\": \"681 435 7055\",\n    \"modificado\": \"2022-05-13T09:54:38Z\"\n  }, {\n    \"id\": 61,\n    \"nombre\": \"Frankie\",\n    \"apellidos\": \"Derx\",\n    \"correo\": \"fderx1o@princeton.edu\",\n    \"telefono\": \"217 290 3241\",\n    \"modificado\": \"2022-10-31T17:30:44Z\"\n  }, {\n    \"id\": 62,\n    \"nombre\": \"Rod\",\n    \"apellidos\": \"Churchin\",\n    \"correo\": \"rchurchin1p@hexun.com\",\n    \"telefono\": \"935 278 4213\",\n    \"modificado\": \"2022-07-16T18:03:36Z\"\n  }, {\n    \"id\": 63,\n    \"nombre\": \"Glad\",\n    \"apellidos\": \"Ekless\",\n    \"correo\": \"gekless1q@canalblog.com\",\n    \"telefono\": \"275 757 8213\",\n    \"modificado\": \"2022-07-05T07:25:54Z\"\n  }, {\n    \"id\": 64,\n    \"nombre\": \"Dana\",\n    \"apellidos\": \"Pipkin\",\n    \"correo\": \"dpipkin1r@people.com.cn\",\n    \"telefono\": \"698 518 9783\",\n    \"modificado\": \"2023-01-08T01:20:17Z\"\n  }, {\n    \"id\": 65,\n    \"nombre\": \"Haskell\",\n    \"apellidos\": \"Kemsley\",\n    \"correo\": \"hkemsley1s@csmonitor.com\",\n    \"telefono\": \"733 983 5688\",\n    \"modificado\": \"2023-04-24T14:37:49Z\"\n  }, {\n    \"id\": 66,\n    \"nombre\": \"Kimbra\",\n    \"apellidos\": \"Hennemann\",\n    \"correo\": \"khennemann1t@google.co.jp\",\n    \"telefono\": \"370 748 6899\",\n    \"modificado\": \"2022-10-25T15:16:17Z\"\n  }, {\n    \"id\": 67,\n    \"nombre\": \"Earle\",\n    \"apellidos\": \"Sharram\",\n    \"correo\": \"esharram1u@vistaprint.com\",\n    \"telefono\": \"100 347 3802\",\n    \"modificado\": \"2022-08-25T06:11:01Z\"\n  }, {\n    \"id\": 68,\n    \"nombre\": \"Jameson\",\n    \"apellidos\": \"Faulder\",\n    \"correo\": \"jfaulder1v@earthlink.net\",\n    \"telefono\": \"947 943 9698\",\n    \"modificado\": \"2022-07-24T00:07:23Z\"\n  }, {\n    \"id\": 69,\n    \"nombre\": \"Hildagarde\",\n    \"apellidos\": \"Risebarer\",\n    \"correo\": \"hrisebarer1w@e-recht24.de\",\n    \"telefono\": \"829 813 7253\",\n    \"modificado\": \"2022-10-05T17:40:52Z\"\n  }, {\n    \"id\": 70,\n    \"nombre\": \"Fern\",\n    \"apellidos\": \"Crole\",\n    \"correo\": \"fcrole1x@last.fm\",\n    \"telefono\": \"779 414 5204\",\n    \"modificado\": \"2022-11-03T06:14:37Z\"\n  }, {\n    \"id\": 71,\n    \"nombre\": \"Valle\",\n    \"apellidos\": \"Sherwood\",\n    \"correo\": \"vsherwood1y@gizmodo.com\",\n    \"telefono\": \"309 149 0389\",\n    \"modificado\": \"2022-11-26T12:28:34Z\"\n  }, {\n    \"id\": 72,\n    \"nombre\": \"Gilberte\",\n    \"apellidos\": \"De Malchar\",\n    \"correo\": \"gdemalchar1z@youtube.com\",\n    \"telefono\": \"997 867 2008\",\n    \"modificado\": \"2022-08-17T21:36:37Z\"\n  }, {\n    \"id\": 73,\n    \"nombre\": \"Garrard\",\n    \"apellidos\": \"Straughan\",\n    \"correo\": \"gstraughan20@indiatimes.com\",\n    \"telefono\": \"139 663 8739\",\n    \"modificado\": \"2022-10-22T01:47:25Z\"\n  }, {\n    \"id\": 74,\n    \"nombre\": \"Edvard\",\n    \"apellidos\": \"Noah\",\n    \"correo\": \"enoah21@privacy.gov.au\",\n    \"telefono\": \"990 607 3196\",\n    \"modificado\": \"2022-10-22T01:37:41Z\"\n  }, {\n    \"id\": 75,\n    \"nombre\": \"Petronilla\",\n    \"apellidos\": \"Sailes\",\n    \"correo\": \"psailes22@buzzfeed.com\",\n    \"telefono\": \"466 172 0344\",\n    \"modificado\": \"2022-05-03T20:48:43Z\"\n  }, {\n    \"id\": 76,\n    \"nombre\": \"Sid\",\n    \"apellidos\": \"Crampin\",\n    \"correo\": \"scrampin23@stanford.edu\",\n    \"telefono\": \"230 685 4585\",\n    \"modificado\": \"2022-10-20T03:11:03Z\"\n  }, {\n    \"id\": 77,\n    \"nombre\": \"Puff\",\n    \"apellidos\": \"Ruberti\",\n    \"correo\": \"pruberti24@foxnews.com\",\n    \"telefono\": \"115 582 9521\",\n    \"modificado\": \"2022-08-29T03:28:03Z\"\n  }, {\n    \"id\": 78,\n    \"nombre\": \"Lowrance\",\n    \"apellidos\": \"Kubiczek\",\n    \"correo\": \"lkubiczek25@pagesperso-orange.fr\",\n    \"telefono\": \"430 851 3443\",\n    \"modificado\": \"2022-05-08T07:45:56Z\"\n  }, {\n    \"id\": 79,\n    \"nombre\": \"Corty\",\n    \"apellidos\": \"Larn\",\n    \"correo\": \"clarn26@constantcontact.com\",\n    \"telefono\": \"428 340 6803\",\n    \"modificado\": \"2022-06-04T18:40:46Z\"\n  }, {\n    \"id\": 80,\n    \"nombre\": \"Alissa\",\n    \"apellidos\": \"Emes\",\n    \"correo\": \"aemes27@t.co\",\n    \"telefono\": \"970 984 7331\",\n    \"modificado\": \"2023-02-26T15:58:30Z\"\n  }, {\n    \"id\": 81,\n    \"nombre\": \"Chaunce\",\n    \"apellidos\": \"Orrill\",\n    \"correo\": \"corrill28@hao123.com\",\n    \"telefono\": \"966 198 8521\",\n    \"modificado\": \"2023-02-03T01:35:36Z\"\n  }, {\n    \"id\": 82,\n    \"nombre\": \"Jareb\",\n    \"apellidos\": \"Pawsey\",\n    \"correo\": \"jpawsey29@quantcast.com\",\n    \"telefono\": \"706 461 4612\",\n    \"modificado\": \"2023-03-11T11:44:01Z\"\n  }, {\n    \"id\": 83,\n    \"nombre\": \"Mignonne\",\n    \"apellidos\": \"Jozefowicz\",\n    \"correo\": \"mjozefowicz2a@fastcompany.com\",\n    \"telefono\": \"912 810 0895\",\n    \"modificado\": \"2023-04-17T06:24:24Z\"\n  }, {\n    \"id\": 84,\n    \"nombre\": \"Nollie\",\n    \"apellidos\": \"Bremley\",\n    \"correo\": \"nbremley2b@qq.com\",\n    \"telefono\": \"444 390 9721\",\n    \"modificado\": \"2022-09-24T03:33:31Z\"\n  }, {\n    \"id\": 85,\n    \"nombre\": \"Orly\",\n    \"apellidos\": \"Sidwick\",\n    \"correo\": \"osidwick2c@whitehouse.gov\",\n    \"telefono\": \"762 534 3515\",\n    \"modificado\": \"2023-04-12T17:09:20Z\"\n  }, {\n    \"id\": 86,\n    \"nombre\": \"Virgie\",\n    \"apellidos\": \"Burnsell\",\n    \"correo\": \"vburnsell2d@hp.com\",\n    \"telefono\": \"548 783 8075\",\n    \"modificado\": \"2022-11-30T01:56:33Z\"\n  }, {\n    \"id\": 87,\n    \"nombre\": \"Portia\",\n    \"apellidos\": \"Chazelle\",\n    \"correo\": \"pchazelle2e@blinklist.com\",\n    \"telefono\": \"387 711 6056\",\n    \"modificado\": \"2022-05-30T05:57:57Z\"\n  }, {\n    \"id\": 88,\n    \"nombre\": \"Zebulon\",\n    \"apellidos\": \"Allsworth\",\n    \"correo\": \"zallsworth2f@npr.org\",\n    \"telefono\": \"384 954 9462\",\n    \"modificado\": \"2023-02-02T08:54:45Z\"\n  }, {\n    \"id\": 89,\n    \"nombre\": \"Hadleigh\",\n    \"apellidos\": \"O' Donohue\",\n    \"correo\": \"hodonohue2g@shinystat.com\",\n    \"telefono\": \"111 918 1941\",\n    \"modificado\": \"2023-03-03T12:27:07Z\"\n  }, {\n    \"id\": 90,\n    \"nombre\": \"Odelinda\",\n    \"apellidos\": \"Pantridge\",\n    \"correo\": \"opantridge2h@blogger.com\",\n    \"telefono\": \"292 860 8786\",\n    \"modificado\": \"2023-01-31T21:11:39Z\"\n  }, {\n    \"id\": 91,\n    \"nombre\": \"Shaylynn\",\n    \"apellidos\": \"Charsley\",\n    \"correo\": \"scharsley2i@xing.com\",\n    \"telefono\": \"748 139 2678\",\n    \"modificado\": \"2022-12-10T15:12:42Z\"\n  }, {\n    \"id\": 92,\n    \"nombre\": \"Elvira\",\n    \"apellidos\": \"Abramow\",\n    \"correo\": \"eabramow2j@weibo.com\",\n    \"telefono\": \"678 657 5301\",\n    \"modificado\": \"2022-05-26T01:56:10Z\"\n  }, {\n    \"id\": 93,\n    \"nombre\": \"Brenn\",\n    \"apellidos\": \"Heffron\",\n    \"correo\": \"bheffron2k@people.com.cn\",\n    \"telefono\": \"463 332 4811\",\n    \"modificado\": \"2023-02-10T17:35:14Z\"\n  }, {\n    \"id\": 94,\n    \"nombre\": \"Yurik\",\n    \"apellidos\": \"Corah\",\n    \"correo\": \"ycorah2l@jigsy.com\",\n    \"telefono\": \"352 746 7754\",\n    \"modificado\": \"2022-06-20T05:48:46Z\"\n  }, {\n    \"id\": 95,\n    \"nombre\": \"Althea\",\n    \"apellidos\": \"Menlove\",\n    \"correo\": \"amenlove2m@kickstarter.com\",\n    \"telefono\": \"514 148 1698\",\n    \"modificado\": \"2023-04-11T02:38:51Z\"\n  }, {\n    \"id\": 96,\n    \"nombre\": \"Doreen\",\n    \"apellidos\": \"Werendell\",\n    \"correo\": \"dwerendell2n@scribd.com\",\n    \"telefono\": \"257 333 7092\",\n    \"modificado\": \"2023-01-06T05:18:32Z\"\n  }, {\n    \"id\": 97,\n    \"nombre\": \"Lynett\",\n    \"apellidos\": \"Bonas\",\n    \"correo\": \"lbonas2o@icio.us\",\n    \"telefono\": \"511 502 9418\",\n    \"modificado\": \"2023-01-12T00:11:02Z\"\n  }, {\n    \"id\": 98,\n    \"nombre\": \"Abby\",\n    \"apellidos\": \"Fake\",\n    \"correo\": \"afake2p@cargocollective.com\",\n    \"telefono\": \"458 151 7165\",\n    \"modificado\": \"2023-03-12T05:21:20Z\"\n  }, {\n    \"id\": 99,\n    \"nombre\": \"Elton\",\n    \"apellidos\": \"Feye\",\n    \"correo\": \"efeye2q@skype.com\",\n    \"telefono\": \"802 734 6723\",\n    \"modificado\": \"2022-08-03T11:17:57Z\"\n  }, {\n    \"id\": 100,\n    \"nombre\": \"Culver\",\n    \"apellidos\": \"Scutchings\",\n    \"correo\": \"cscutchings2r@harvard.edu\",\n    \"telefono\": \"129 439 2936\",\n    \"modificado\": \"2022-08-19T05:55:50Z\"\n  }\n]"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Añadir un nuevo perito",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<integer>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"correo\": \"<string>\",\n  \"telefono\": \"<string>\",\n  \"modificado\": \"<dateTime>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/peritos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"peritos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<object>"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/peritos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"peritos"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "encargos",
+			"item": [
+				{
+					"name": "Listado de encargos pendientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/encargos?fecha=<dateTime>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"encargos"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "<dateTime>",
+									"description": "limite de los encargos"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/encargos?fecha=<dateTime>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									],
+									"query": [
+										{
+											"key": "fecha",
+											"value": "<dateTime>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"encargoId\": \"<integer>\",\n    \"peritoId\": \"<integer>\",\n    \"peticion\": \"<dateTime>\",\n    \"ref\": \"<string>\",\n    \"direccion\": \"<string>\"\n  },\n  {\n    \"encargoId\": \"<integer>\",\n    \"peritoId\": \"<integer>\",\n    \"peticion\": \"<dateTime>\",\n    \"ref\": \"<string>\",\n    \"direccion\": \"<string>\"\n  }\n]"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/encargos?fecha=<dateTime>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									],
+									"query": [
+										{
+											"key": "fecha",
+											"value": "<dateTime>"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/encargos?fecha=<dateTime>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									],
+									"query": [
+										{
+											"key": "fecha",
+											"value": "<dateTime>"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/encargos?fecha=<dateTime>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									],
+									"query": [
+										{
+											"key": "fecha",
+											"value": "<dateTime>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Crea un encargo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"encargoId\": \"<integer>\",\n  \"peritoId\": \"<integer>\",\n  \"peticion\": \"<dateTime>\",\n  \"ref\": \"<string>\",\n  \"direccion\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/encargos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"encargos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"encargoId\": \"<integer>\",\n  \"peritoId\": \"<integer>\",\n  \"peticion\": \"<dateTime>\",\n  \"ref\": \"<string>\",\n  \"direccion\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/encargos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"encargoId\": \"<integer>\",\n    \"peritoId\": \"<integer>\",\n    \"peticion\": \"<dateTime>\",\n    \"ref\": \"<string>\",\n    \"direccion\": \"<string>\"\n  },\n  {\n    \"encargoId\": \"<integer>\",\n    \"peritoId\": \"<integer>\",\n    \"peticion\": \"<dateTime>\",\n    \"ref\": \"<string>\",\n    \"direccion\": \"<string>\"\n  }\n]"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"encargoId\": \"<integer>\",\n  \"peritoId\": \"<integer>\",\n  \"peticion\": \"<dateTime>\",\n  \"ref\": \"<string>\",\n  \"direccion\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/encargos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"encargoId\": \"<integer>\",\n  \"peritoId\": \"<integer>\",\n  \"peticion\": \"<dateTime>\",\n  \"ref\": \"<string>\",\n  \"direccion\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/encargos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"encargoId\": \"<integer>\",\n  \"peritoId\": \"<integer>\",\n  \"peticion\": \"<dateTime>\",\n  \"ref\": \"<string>\",\n  \"direccion\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/encargos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encargos"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
