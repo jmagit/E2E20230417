@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "41bd2f09-c93f-43ee-bda4-74a2eed3dad1",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8273928",
+		"_collection_link": "https://www.postman.com/red-flare-4265/workspace/ejemplos/collection/8273928-41bd2f09-c93f-43ee-bda4-74a2eed3dad1?action=share&creator=8273928&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/blog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
