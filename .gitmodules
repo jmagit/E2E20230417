@@ -1,0 +1,3 @@
+[submodule "Web4Testing"]
+	path = Web4Testing
+	url = https://github.com/jmagit/Web4Testing.git
